@@ -17,14 +17,12 @@ gem 'bootsnap', '>= 1.1.0', require: false
 gem 'active_designer'
 # Figaro for ENV variables
 gem 'figaro'
-# Faraday/HTTParty for API calls
+# Faraday for API calls
 gem 'faraday'
-gem 'httparty'
 # Fast JSON API for serializers
 gem 'fast_jsonapi'
 
 group :development, :test do
-  # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'pry'
   gem 'rspec-rails', '~> 4.0.1'
   gem 'capybara'
@@ -37,8 +35,8 @@ group :development do
 end
 
 group :test do
-  # gem 'vcr'
-  # gem 'webmock'
+  gem 'vcr'
+  gem 'webmock'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
