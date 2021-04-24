@@ -99,11 +99,13 @@ To run the full test suite you will need to run the command:
 - PostgreSQL
 - RSpec
 - Capybara
-- Fast JsonAPI
+- Fast JSON API
 - Faraday
 - VCR
-- Rubocop
+- Webmock
+- Shoulda Matchers
 - Simplecov
+- Rubocop
 
 ## Versions
 
