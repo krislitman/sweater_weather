@@ -20,6 +20,21 @@ class WeatherFacade
   def get_forecast
     forecast = WeatherService.get_forecast(@lat_and_long)
     @current_weather = CurrentWeather.new(forecast)
-    @daily_weather = DailyWeather.next_five_days(forecast[:daily])
+    @daily_weather = next_five_days(forecast[:daily])
+    # @daily_weather = DailyWeather.next_five_days(forecast[:daily])
+    @hourly_weather = next_eight_hours(forecast[:hourly])
+    # @hourly_weather = HourlyWeather.next_eight_hours(forecast[:hourly])
+  end
+
+  def next_five_days(forecast)
+    forecast[0..4].map do |day|
+      DailyWeather.new(day)
+    end
+  end
+
+  def next_eight_hours(forecast)
+    forecast[0..7].map do |hour|
+      HourlyWeather.new(hour)
+    end
   end
 end

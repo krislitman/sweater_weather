@@ -16,10 +16,4 @@ class DailyWeather
     @conditions = data[:weather][0][:description]
     @icon = data[:weather][0][:icon]
   end
-
-  def self.next_five_days(forecast)
-    forecast[0..4].map do |day|
-      DailyWeather.new(day)
-    end
-  end
 end

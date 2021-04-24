@@ -28,8 +28,18 @@ RSpec.describe WeatherFacade do
       facade = WeatherFacade.new("Denver,CO")
       weather = facade.daily_weather
       
-      expect(weather).to be_an_instance_of(DailyWeather)
+      expect(weather[0]).to be_an_instance_of(DailyWeather)
       expect(weather.count).to eq(5)
+    end
+  end
+  it "Can find hourly_weather" do
+    VCR.use_cassette('hourly_weather',
+    match_requests_on: %i[body]) do
+      facade = WeatherFacade.new("Denver,CO")
+      weather = facade.hourly_weather
+
+      expect(weather[0]).to be_an_instance_of(HourlyWeather)
+      expect(weather.count).to eq(8)
     end
   end
 end
