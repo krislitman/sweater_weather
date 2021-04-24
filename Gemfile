@@ -28,6 +28,7 @@ group :development, :test do
   gem 'capybara'
   gem 'shoulda-matchers', '~> 3.1'
   gem 'orderly'
+  gem 'simplecov'
 end
 
 group :development do
