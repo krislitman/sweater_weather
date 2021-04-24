@@ -71,6 +71,22 @@ Example Response:
 ##### Background Image for the City!
 **`GET localhost:3000/api/v1/backgrounds`**
 <ul><li>Enter a city and state with a **location** query parameter, ex: 'Denver,CO'</li></ul>
+Example Response:
+
+```{
+    "data": {
+        "id": "null",
+        "type": "image",
+        "attributes": {
+            "image": {
+                "location": "tampa,fl",
+                "image_url": "example.com",
+                "credit": {
+                    "source": "flickr.com",
+                    "owner": "hulk hogan"
+                }
+            }...
+```
 
 ## Running the tests 
 
@@ -100,3 +116,4 @@ To run the full test suite you will need to run the command:
 - [Giphy](https://giphy.com/) - For the weather batman gif!
 - [MapQuest's Geocoding API](https://developer.mapquest.com/documentation/geocoding-api/)
 - [OpenWeather One Call API](https://openweathermap.org/api/one-call-api)
+- [Flickr](https://www.flickr.com/services/developer/api/)
