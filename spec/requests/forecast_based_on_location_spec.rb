@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe 'Retrieve weather for a city' do
   scenario 'Happy Path ~ It can take in location and get forecast' do
-    VCR.use_cassette('forecast/request_spec_1',
+    VCR.use_cassette('requests/forecast/happy_path_1',
     match_requests_on: %i[body]) do
 
       get '/api/v1/forecast?location=denver,co'
@@ -17,7 +17,7 @@ RSpec.describe 'Retrieve weather for a city' do
     end
   end
   scenario 'Happy Path ~ It can take in another location and get forecast' do
-    VCR.use_cassette('forecast/request_spec_2',
+    VCR.use_cassette('requests/forecast/happy_path_2',
     match_requests_on: %i[body]) do
 
       get '/api/v1/forecast?location=tampa,fl'

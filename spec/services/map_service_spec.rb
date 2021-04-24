@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe MapService do
   it 'Returns proper data from MapQuest' do
-    VCR.use_cassette('map_service_spec',
+    VCR.use_cassette('services/map_service_spec',
     match_requests_on: %i[body]) do
       response = MapService.lat_and_long('Denver,CO')
 

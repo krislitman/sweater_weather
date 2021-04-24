@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe WeatherFacade do
   it "Can be created with a location" do
-    VCR.use_cassette('weather_facade_create',
+    VCR.use_cassette('facades/weather_facade/create',
     match_requests_on: %i[body]) do
       expected = WeatherFacade.new("Denver,CO")
 
@@ -14,7 +14,7 @@ RSpec.describe WeatherFacade do
     end
   end
   it "Can find current_weather" do
-    VCR.use_cassette('current_weather',
+    VCR.use_cassette('facades/weather_facade/current_weather',
     match_requests_on: %i[body]) do
       facade = WeatherFacade.new("Denver,CO")
       weather = facade.current_weather
@@ -23,7 +23,7 @@ RSpec.describe WeatherFacade do
     end
   end
   it "Can find daily_weather" do
-    VCR.use_cassette('daily_weather',
+    VCR.use_cassette('facades/weather_facade/daily_weather',
     match_requests_on: %i[body]) do
       facade = WeatherFacade.new("Denver,CO")
       weather = facade.daily_weather
@@ -33,7 +33,7 @@ RSpec.describe WeatherFacade do
     end
   end
   it "Can find hourly_weather" do
-    VCR.use_cassette('hourly_weather',
+    VCR.use_cassette('facades/weather_facade/hourly_weather',
     match_requests_on: %i[body]) do
       facade = WeatherFacade.new("Denver,CO")
       weather = facade.hourly_weather
