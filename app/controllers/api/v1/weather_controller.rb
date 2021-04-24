@@ -1,5 +1,6 @@
 class Api::V1::WeatherController < ApplicationController
   def get_forecast
-    WeatherFacade.new(params[:location])
+    data = WeatherFacade.new(params[:location])
+    render json: ForecastSerializer.new(data)
   end
 end

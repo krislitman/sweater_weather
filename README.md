@@ -20,14 +20,14 @@ Rails API Application
 
 ### Installing
 
-These instructions will get you a copy of the project up and running on
-your local machine for development and testing purposes. See deployment
-for notes on how to deploy the project on a live system.
+These instructions will get you up and running with a copy of the project on
+your local machine for development and testing purposes.
 
-1. Fork and Clone the repo
+1. Fork and Clone this repo
 2. Install gem packages: `bundle install`
-3. Run rails db:{drop,create,migrate,seed} -- (you may see errors from pg_restore that you can ignore)
-4. Run rails s to start the rails server, and to see json responses
+3. Run `rails db:{drop,create,migrate,seed}` -- (you may see errors from pg_restore that you can ignore)
+4. Run rails s to start the rails server
+5. Enter the endpoints into Postman to see JSON responses!
 
 ## Overview
 
@@ -35,7 +35,14 @@ for notes on how to deploy the project on a live system.
   
 ### Endpoints
 
+##### Retrieve weather for a city!
+`GET localhost:3000/api/v1/forecast`
+<ul><li>Enter a city and state with a `location` query parameter</li></ul>
+
 ## Running the tests 
+
+To run the full test suite you will need to run the command:
+`bundle exec rspec`
 
 ## Built With
 
@@ -44,6 +51,8 @@ for notes on how to deploy the project on a live system.
 - RSpec
 - Capybara
 - Fast JsonAPI
+- Faraday
+- VCR
 - Rubocop
 - Simplecov
 
