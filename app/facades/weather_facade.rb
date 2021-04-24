@@ -20,5 +20,6 @@ class WeatherFacade
   def get_forecast
     forecast = WeatherService.get_forecast(@lat_and_long)
     @current_weather = CurrentWeather.new(forecast)
+    @daily_weather = DailyWeather.next_five_days(forecast[:daily])
   end
 end
