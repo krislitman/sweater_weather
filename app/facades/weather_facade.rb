@@ -1,13 +1,11 @@
 class WeatherFacade
-  attr_reader :id,
-              :lat_and_long,
+  attr_reader :lat_and_long,
               :location,
               :current_weather,
               :daily_weather,
               :hourly_weather
 
   def initialize(location)
-    @id = 'null'
     @location = location
     @lat_and_long = get_location
     @forecast = get_forecast
