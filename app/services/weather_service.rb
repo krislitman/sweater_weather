@@ -1,15 +1,17 @@
 class WeatherService
-  def self.lat_and_long(location)
-    response = conn.get("geocoding/v1/address") do |req|
-      req.params['location'] = location
-      req.params['key'] = Figaro.env.key
+  def self.get_forecast(location)
+    response = conn.get("data/2.5/onecall") do |req|
+      req.params['appid'] = Figaro.env.appid
+      req.params['lat'] = location.lat
+      req.params['lon'] = location.lng
     end
-    data = JSON.parse(response.body, symbolize_names: true)
+    JSON.parse(response.body, symbolize_names: true)
+    require 'pry'; binding.pry
   end
 
   private
 
   def self.conn
-    Faraday.new('http://www.mapquestapi.com')
+    Faraday.new('https://api.openweathermap.org')
   end
 end
