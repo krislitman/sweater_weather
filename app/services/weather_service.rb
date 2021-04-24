@@ -4,9 +4,9 @@ class WeatherService
       req.params['appid'] = Figaro.env.appid
       req.params['lat'] = location.lat
       req.params['lon'] = location.lng
+      req.params['units'] = 'imperial'
     end
     JSON.parse(response.body, symbolize_names: true)
-    require 'pry'; binding.pry
   end
 
   private
