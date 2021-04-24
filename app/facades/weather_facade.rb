@@ -7,18 +7,18 @@ class WeatherFacade
 
   def initialize(location)
     @location = location
-    @lat_and_long = get_location
-    @forecast = get_forecast
+    @lat_and_long = find_location
+    @forecast = find_forecast
     @current_weather = current_weather
   end
 
-  def get_location
+  def find_location
     attributes = MapService.lat_and_long(@location)
     @lat_and_long = MapQuest.new(attributes)
   end
 
-  def get_forecast
-    forecast = WeatherService.get_forecast(@lat_and_long)
+  def find_forecast
+    forecast = WeatherService.find_forecast(@lat_and_long)
     @current_weather = CurrentWeather.new(forecast)
     @daily_weather = next_five_days(forecast[:daily])
     @hourly_weather = next_eight_hours(forecast[:hourly])

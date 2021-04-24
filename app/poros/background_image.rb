@@ -11,7 +11,7 @@ class BackgroundImage
 
   def provide_credit(data)
     {
-      source: "flickr.com",
+      source: 'flickr.com',
       owner: data[:photos][:photo][0][:owner]
     }
   end

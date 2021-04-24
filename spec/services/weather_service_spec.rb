@@ -5,7 +5,7 @@ RSpec.describe WeatherService do
     VCR.use_cassette('weather_service_spec',
     match_requests_on: %i[body]) do
       facade = WeatherFacade.new('Tampa,FL')
-      response = WeatherService.get_forecast(facade.lat_and_long)
+      response = WeatherService.find_forecast(facade.lat_and_long)
 
       expect(response).to be_a(Hash)
       expect(response.keys).to include(:lat)

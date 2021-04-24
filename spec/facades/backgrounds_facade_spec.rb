@@ -16,7 +16,7 @@ RSpec.describe BackgroundsFacade do
     match_requests_on: %i[body]) do
       expected = BackgroundsFacade.new('Tampa,FL')
 
-      expect(expected.get_time_of_day).to eq('afternoon broken clouds')
+      expect(expected.time_of_day).to be_a(String)
     end
   end
 end
