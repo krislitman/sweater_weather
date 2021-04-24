@@ -4,7 +4,7 @@ class WeatherService
       req.params['location'] = location
       req.params['key'] = Figaro.env.key
     end
-    JSON.parse(response.body, symbolize_names: true)
+    data = JSON.parse(response.body, symbolize_names: true)
   end
 
   private
