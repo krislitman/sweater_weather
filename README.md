@@ -2,6 +2,8 @@
 
 Rails API Application
 
+![giphy](https://media.giphy.com/media/za5xikuRr0OzK/giphy.gif)
+
 ## Table of Contents
 
   - [Author](#author)
@@ -11,6 +13,7 @@ Rails API Application
   - [Runing the tests](#running-the-tests)
   - [Built With](#built-with)
   - [Versioning](#versioning)
+  - [Acknowledgements](#acknowledgements)
 
 ## Author
 
@@ -47,7 +50,7 @@ your local machine for development and testing purposes.
 
 ##### Retrieve weather for a city!
 **`GET localhost:3000/api/v1/forecast`**
-<ul><li>Enter a city and state with a `location` query parameter</li></ul>
+<ul><li>Enter a city and state with a **location** query parameter</li></ul>
 Example Response:
 
 ```{
@@ -62,9 +65,7 @@ Example Response:
                 "temperature": 83.16,
                 etc...
             }
-        }
-    }
-}
+        }...
 ```
 
 ## Running the tests 
@@ -89,3 +90,9 @@ To run the full test suite you will need to run the command:
 - Ruby 2.5.3
 
 - Rails 5.2.5
+
+## Acknowledgements
+
+- [Giphy](https://giphy.com/) - For the weather batman gif!
+- [MapQuest's Geocoding API](https://developer.mapquest.com/documentation/geocoding-api/)
+- [OpenWeather One Call API](https://openweathermap.org/api/one-call-api)
