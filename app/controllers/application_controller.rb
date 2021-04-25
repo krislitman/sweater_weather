@@ -4,7 +4,7 @@ class ApplicationController < ActionController::API
            status: :bad_request
   end
   def invalid_registration(messages)
-    render json: { 'message': { 'invalid_request':"#{messages}" } },
+    render json: { 'message': { 'invalid_request': "#{messages}" } },
            status: :bad_request
   end
 end
