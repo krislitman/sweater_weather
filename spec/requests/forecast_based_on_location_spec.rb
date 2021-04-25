@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe 'Retrieve weather for a city' do
+RSpec.describe 'Retrieve weather for a city', type: :request do
   scenario 'Happy Path ~ It can take in location and get forecast' do
     VCR.use_cassette('requests/forecast/happy_path_1',
     match_requests_on: %i[body]) do
@@ -21,6 +21,21 @@ RSpec.describe 'Retrieve weather for a city' do
     match_requests_on: %i[body]) do
 
       get '/api/v1/forecast?location=tampa,fl'
+      data = JSON.parse(response.body, symbolize_names: true)
+      
+      expect(response).to be_successful
+      expect(response.status).to eq(200)
+      expect(data).to be_a(Hash)
+      expect(data[:data][:attributes]).to have_key(:current_weather)
+      expect(data[:data][:attributes]).to have_key(:daily_weather)
+      expect(data[:data][:attributes]).to have_key(:hourly_weather)
+    end
+  end
+  scenario 'Happy Path ~ It can take in yet another location and get forecast' do
+    VCR.use_cassette('requests/forecast/happy_path_3',
+    match_requests_on: %i[body]) do
+
+      get '/api/v1/forecast?location=portland,or'
       data = JSON.parse(response.body, symbolize_names: true)
       
       expect(response).to be_successful

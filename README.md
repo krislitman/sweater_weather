@@ -48,7 +48,7 @@ your local machine for development and testing purposes.
   
 ## Endpoints
 
-##### Retrieve weather for a city!
+##### Retrieve weather for a city
 **`GET localhost:3000/api/v1/forecast`**
 <ul><li>Enter a city and state with a **location** query parameter, ex: 'Tampa,FL'</li></ul>
 Example Response:
@@ -68,7 +68,7 @@ Example Response:
         }...
 ```
 
-##### Background Image for the City!
+##### Background Image for the City
 **`GET localhost:3000/api/v1/backgrounds`**
 <ul><li>Enter a city and state with a **location** query parameter, ex: 'Denver,CO'</li></ul>
 Example Response:
@@ -87,9 +87,37 @@ Example Response:
                 }
             }...
 ```
+##### User Registration
+**`POST localhost:3000/api/v1/users`**
+<ul><li>You will need to send your parameters through the body of the request, ex:</li></ul>
+
+```
+Content-Type: application/json
+Accept: application/json
+
+{
+  "email": "whatever@example.com",
+  "password": "password",
+  "password_confirmation": "password"
+}
+```
+Example Response:
+```
+{
+    "data": {
+        "id": "1",
+        "type": "users",
+        "attributes": {
+            "email": "test@example.com",
+            "api_key": "your_api_key"
+        }
+    }
+}
+```
 
 ## Running the tests 
 
+**Testing with RSpec**
 To run the full test suite you will need to run the command:
 `bundle exec rspec`
 
@@ -116,6 +144,9 @@ To run the full test suite you will need to run the command:
 ## Acknowledgements
 
 - [Giphy](https://giphy.com/) - For the weather batman gif!
+
 - [MapQuest's Geocoding API](https://developer.mapquest.com/documentation/geocoding-api/)
+
 - [OpenWeather One Call API](https://openweathermap.org/api/one-call-api)
+
 - [Flickr](https://www.flickr.com/services/developer/api/)
