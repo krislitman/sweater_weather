@@ -25,11 +25,12 @@ Rails API Application
 
 ### API Keys
 
-Before getting started with installation, you will need to get an API key from both 
-[MapQuest's Geocoding API](https://developer.mapquest.com/documentation/geocoding-api/) 
-and [OpenWeather One Call API](https://openweathermap.org/api/one-call-api). 
-Please get your own copy and include them as environment variables with Figaro. 
-Run `figaro install` to add the application.yml file to your copy of the application.
+Before getting started with installation, you will need to get an API key from
+[MapQuest's Geocoding API](https://developer.mapquest.com/documentation/geocoding-api/),
+[OpenWeather One Call API](https://openweathermap.org/api/one-call-api),
+and [Flickr API](https://www.flickr.com/services/developer/api/).
+Please sign up to get your own copy and include them as environment variables with Figaro. 
+Run `figaro install` to add your own application.yml file to the application.
 
 ### Installing
 
@@ -87,6 +88,7 @@ Example Response:
                 }
             }...
 ```
+
 #### User Registration
 **`POST localhost:3000/api/v1/users`**
 <ul><li>You will need to send your parameters through the body of the request, ex:</li></ul>
@@ -99,6 +101,33 @@ Accept: application/json
   "email": "whatever@example.com",
   "password": "password",
   "password_confirmation": "password"
+}
+```
+Example Response:
+```
+{
+    "data": {
+        "id": "1",
+        "type": "users",
+        "attributes": {
+            "email": "test@example.com",
+            "api_key": "your_api_key"
+        }
+    }
+}
+```
+
+#### Login
+**`POST localhost:3000/api/v1/sessions`**
+<ul><li>You will need to send your parameters through the body of the request, ex:</li></ul>
+
+```
+Content-Type: application/json
+Accept: application/json
+
+{
+  "email": "whatever@example.com",
+  "password": "password",
 }
 ```
 Example Response:
