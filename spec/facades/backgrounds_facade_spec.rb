@@ -15,7 +15,7 @@ RSpec.describe BackgroundsFacade do
     VCR.use_cassette('facades/backgrounds_facade/time_of_day',
     match_requests_on: %i[body]) do
       expected = BackgroundsFacade.new('Tampa,FL')
-
+      
       expect(expected.time_of_day).to be_a(String)
     end
   end

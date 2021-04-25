@@ -7,6 +7,12 @@ RSpec.describe BackgroundImage do
       facade = BackgroundsFacade.new('Denver,CO')
       image = facade.image
       expected = JSON.parse(image.to_json, symbolize_names: true)
+
+      expect(image).to be_an_instance_of(BackgroundImage)
+      expect(expected).to be_a(Hash)
+      expect(expected.keys).to include(:location)
+      expect(expected.keys).to include(:image_url)
+      expect(expected.keys).to include(:credit)
     end
   end
 end
