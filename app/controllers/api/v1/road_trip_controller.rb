@@ -4,6 +4,8 @@ class Api::V1::RoadTripController < ApplicationController
     if user.nil?
       unauthorized_user
     else
+      road_trip = RoadTripFacade.new(normalize_info)
+      render json: RoadtripSerializer.new(road_trip), status: :created
     end
   end
 end
