@@ -31,6 +31,10 @@ and [Flickr API](https://www.flickr.com/services/developer/api/).
 Please sign up to get your own copy and include them as environment variables with Figaro. 
 Run `figaro install` to add your own application.yml file to the application.
 
+### Postman Collection
+
+View the Postman documentation here: [Postman Collection](https://documenter.getpostman.com/view/14824308/TzJybFVw)
+
 ### Installing
 
 These instructions will get you up and running with a copy of the project on
@@ -181,6 +185,7 @@ To run the full test suite you will need to run the command:
 
 - Rails
 - PostgreSQL
+- Postman
 - RSpec
 - Capybara
 - Fast JSON API
