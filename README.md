@@ -91,7 +91,8 @@ Example Response:
 **`POST localhost:3000/api/v1/users`**
 <ul><li>You will need to send your parameters through the body of the request, ex:</li></ul>
 
-```Content-Type: application/json
+```
+Content-Type: application/json
 Accept: application/json
 
 {
@@ -101,9 +102,22 @@ Accept: application/json
 }
 ```
 Example Response:
+```
+{
+    "data": {
+        "id": "1",
+        "type": "users",
+        "attributes": {
+            "email": "test@example.com",
+            "api_key": "your_api_key"
+        }
+    }
+}
+```
 
 ## Running the tests 
 
+**Testing with RSpec**
 To run the full test suite you will need to run the command:
 `bundle exec rspec`
 
@@ -130,6 +144,9 @@ To run the full test suite you will need to run the command:
 ## Acknowledgements
 
 - [Giphy](https://giphy.com/) - For the weather batman gif!
+
 - [MapQuest's Geocoding API](https://developer.mapquest.com/documentation/geocoding-api/)
+
 - [OpenWeather One Call API](https://openweathermap.org/api/one-call-api)
+
 - [Flickr](https://www.flickr.com/services/developer/api/)
