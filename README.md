@@ -48,7 +48,7 @@ your local machine for development and testing purposes.
   
 ## Endpoints
 
-##### Retrieve weather for a city!
+##### Retrieve weather for a city
 **`GET localhost:3000/api/v1/forecast`**
 <ul><li>Enter a city and state with a **location** query parameter, ex: 'Tampa,FL'</li></ul>
 Example Response:
@@ -68,7 +68,7 @@ Example Response:
         }...
 ```
 
-##### Background Image for the City!
+##### Background Image for the City
 **`GET localhost:3000/api/v1/backgrounds`**
 <ul><li>Enter a city and state with a **location** query parameter, ex: 'Denver,CO'</li></ul>
 Example Response:
@@ -87,6 +87,20 @@ Example Response:
                 }
             }...
 ```
+##### User Registration
+**`POST localhost:3000/api/v1/users`**
+<ul><li>You will need to send your parameters through the body of the request, ex:</li></ul>
+
+```Content-Type: application/json
+Accept: application/json
+
+{
+  "email": "whatever@example.com",
+  "password": "password",
+  "password_confirmation": "password"
+}
+```
+Example Response:
 
 ## Running the tests 
 
