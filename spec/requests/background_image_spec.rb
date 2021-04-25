@@ -2,7 +2,10 @@ require 'rails_helper'
 
 RSpec.describe 'Background Image for the City', type: :request do
   scenario 'Sad Path ~ With no parameter I receieve an error message' do
-    get '/api/v1/backgrounds?location='
+    params = {
+      location: ''
+    }
+    get api_v1_backgrounds_path, params: params
     data = JSON.parse(response.body, symbolize_names: true)
 
     expect(response).not_to be_successful
@@ -10,7 +13,10 @@ RSpec.describe 'Background Image for the City', type: :request do
     expect(data[:message][:invalid_request]).to eq('Your parameters are bad and you should feel bad')
   end
   scenario 'Sad Path ~ Integer gives an invalid request' do
-    get '/api/v1/backgrounds?location=913084098-34'
+    params = {
+      location: '913084098-34'
+    }
+    get api_v1_backgrounds_path, params: params
     data = JSON.parse(response.body, symbolize_names: true)
     
     expect(response).not_to be_successful
@@ -20,7 +26,11 @@ RSpec.describe 'Background Image for the City', type: :request do
   scenario 'Happy Path ~ Can retrieve background image' do
     VCR.use_cassette('requests/background_image/happy_path_1',
     match_requests_on: %i[body]) do
-      get '/api/v1/backgrounds?location=tampa,fl'
+      params = {
+        location: 'tampa,fl'
+      }
+      get api_v1_backgrounds_path, params: params
+      
       expected = JSON.parse(response.body, symbolize_names: true)
 
       expect(response).to be_successful
@@ -36,7 +46,10 @@ RSpec.describe 'Background Image for the City', type: :request do
   scenario 'Happy Path ~ Can retrieve another background image' do
     VCR.use_cassette('requests/background_image/happy_path_2',
     match_requests_on: %i[body]) do
-      get '/api/v1/backgrounds?location=pittsburgh,pa'
+      params = {
+        location: 'pittsburgh,pa'
+      }
+      get api_v1_backgrounds_path, params: params
       expected = JSON.parse(response.body, symbolize_names: true)
 
       expect(response).to be_successful
@@ -47,7 +60,10 @@ RSpec.describe 'Background Image for the City', type: :request do
   scenario 'Happy Path ~ And yet I can retrieve another background image' do
     VCR.use_cassette('requests/background_image/happy_path_3',
     match_requests_on: %i[body]) do
-      get '/api/v1/backgrounds?location=denver,co'
+      params = {
+        location: 'denver,co'
+      }
+      get api_v1_backgrounds_path, params: params
       expected = JSON.parse(response.body, symbolize_names: true)
 
       expect(response).to be_successful
