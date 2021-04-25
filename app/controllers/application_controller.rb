@@ -5,7 +5,11 @@ class ApplicationController < ActionController::API
   end
   def invalid_registration(messages)
     render json: { 'message': { 'invalid_request': "#{messages}" } },
-           status: :bad_request
+    status: :bad_request
+  end
+  def unauthorized_user
+    render json: { 'message': { 'unauthorized': 'Incorrect Key' } },
+           status: :unauthorized
   end
   def normalize_info
     raw = request.body.read
