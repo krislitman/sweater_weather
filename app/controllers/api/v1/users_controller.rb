@@ -1,6 +1,6 @@
 class Api::V1::UsersController < ApplicationController
   def register
-    user = User.new(user_params)
+    user = build_user
     if user.save
       render json: UsersSerializer.new(user), status: :created
     else
@@ -10,7 +10,11 @@ class Api::V1::UsersController < ApplicationController
 
   private
 
-  def user_params
-    params.permit(:email, :password, :password_confirmation)
+  def build_user
+    User.new(
+      email: normalize_info[:email],
+      password: normalize_info[:password],
+      password_confirmation: normalize_info[:password_confirmation]
+    )
   end
 end

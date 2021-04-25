@@ -13,7 +13,7 @@ RSpec.describe 'Login', type: :request do
     }
     headers = { 'CONTENT_TYPE' => 'application/json', 'ACCEPT' => 'application/json'}
 
-    post "/api/v1/sessions", headers: headers, params: JSON.generate(params)
+    post api_v1_sessions_path, headers: headers, params: JSON.generate(params)
     expected = JSON.parse(response.body, symbolize_names: true)
     
     expect(response).not_to be_successful
@@ -34,7 +34,7 @@ RSpec.describe 'Login', type: :request do
     }
     headers = { 'CONTENT_TYPE' => 'application/json', 'ACCEPT' => 'application/json'}
 
-    post "/api/v1/sessions", headers: headers, params: JSON.generate(params)
+    post api_v1_sessions_path, headers: headers, params: JSON.generate(params)
     expected = JSON.parse(response.body, symbolize_names: true)
 
     expect(response).not_to be_successful
@@ -49,7 +49,7 @@ RSpec.describe 'Login', type: :request do
     }
     headers = { 'CONTENT_TYPE' => 'application/json', 'ACCEPT' => 'application/json'}
     
-    post "/api/v1/sessions", headers: headers, params: JSON.generate(params)
+    post api_v1_sessions_path, headers: headers, params: JSON.generate(params)
     expected = JSON.parse(response.body, symbolize_names: true)
     
     expect(response).not_to be_successful
@@ -68,7 +68,7 @@ RSpec.describe 'Login', type: :request do
     }
     headers = { 'CONTENT_TYPE' => 'application/json', 'ACCEPT' => 'application/json'}
   
-    post "/api/v1/sessions", headers: headers, params: JSON.generate(params)
+    post api_v1_sessions_path, headers: headers, params: JSON.generate(params)
     expected = JSON.parse(response.body, symbolize_names: true)
 
     expect(response).to be_successful

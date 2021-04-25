@@ -7,4 +7,9 @@ class ApplicationController < ActionController::API
     render json: { 'message': { 'invalid_request': "#{messages}" } },
            status: :bad_request
   end
+  def normalize_info
+    raw = request.body.read
+    clean = raw.gsub(/\n/, "")
+    JSON.parse(clean, symbolize_names: true)
+  end
 end
