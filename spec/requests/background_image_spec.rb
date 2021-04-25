@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe 'Background Image for the City' do
+RSpec.describe 'Background Image for the City', type: :request do
   scenario 'Sad Path ~ With no parameter I receieve an error message' do
     get '/api/v1/backgrounds?location='
     data = JSON.parse(response.body, symbolize_names: true)
@@ -37,6 +37,17 @@ RSpec.describe 'Background Image for the City' do
     VCR.use_cassette('requests/background_image/happy_path_2',
     match_requests_on: %i[body]) do
       get '/api/v1/backgrounds?location=pittsburgh,pa'
+      expected = JSON.parse(response.body, symbolize_names: true)
+
+      expect(response).to be_successful
+      expect(response.status).to eq(200)
+      expect(expected[:data][:attributes].keys).to include(:image)
+    end
+  end
+  scenario 'Happy Path ~ And yet I can retrieve another background image' do
+    VCR.use_cassette('requests/background_image/happy_path_3',
+    match_requests_on: %i[body]) do
+      get '/api/v1/backgrounds?location=denver,co'
       expected = JSON.parse(response.body, symbolize_names: true)
 
       expect(response).to be_successful
