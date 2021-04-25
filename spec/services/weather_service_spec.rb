@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe WeatherService do
   it 'Returns proper data from OpenWeatherMap' do
-    VCR.use_cassette('weather_service_spec',
+    VCR.use_cassette('services/weather_service_spec',
     match_requests_on: %i[body]) do
       facade = WeatherFacade.new('Tampa,FL')
       response = WeatherService.find_forecast(facade.lat_and_long)

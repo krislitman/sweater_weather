@@ -10,12 +10,13 @@ class BackgroundsFacade
     @time = @facade.current_weather.datetime.strftime('%I %M %p')
     @time_of_day_conditions = time_of_day
     @image = background_image
-    @credit = @image.credit
   end
 
   def background_image
     @image = BackgroundsService.background_image(@location, @time_of_day_conditions)
     @image = BackgroundsService.background_image(@location) if @image.nil?
+    @credit = @image.credit
+    @image
   end
 
   def time_of_day
