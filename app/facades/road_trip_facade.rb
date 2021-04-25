@@ -31,6 +31,7 @@ class RoadTripFacade
 
   def find_arrival_time
     current_time = Time.now.strftime('%I %M %p %d')
+    return impossible if @travel_time.nil?
     time = Time.now + @travel_time[0..1].to_i.hour + @travel_time[3..4].to_i.minutes
     arrival_time = time.strftime('%I %M %p %d')
     if current_time[9..10] == arrival_time[9..10] && current_time[6..7] == arrival_time[6..7] &&

@@ -1,6 +1,8 @@
 # Sweater Weather
 
-Rails API Application
+### Rails API Application
+
+**Find the local forecast for your upcoming Road Trip!**
 
 ![giphy](https://media.giphy.com/media/za5xikuRr0OzK/giphy.gif)
 
