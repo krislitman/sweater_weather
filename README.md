@@ -8,7 +8,6 @@ Rails API Application
 
   - [Author](#author)
   - [Getting Started](#getting-started)
-  - [Overview](#overview)
   - [Endpoints](#endpoints)
   - [Runing the tests](#running-the-tests)
   - [Built With](#built-with)
@@ -43,10 +42,6 @@ your local machine for development and testing purposes.
 4. Run rails s to start the rails server
 5. Enter endpoints (see below) into Postman to see JSON responses!
 
-## Overview
-
-### Database Schema
-  
 ## Endpoints
 
 #### Retrieve weather for a city
@@ -139,6 +134,38 @@ Example Response:
         "attributes": {
             "email": "test@example.com",
             "api_key": "your_api_key"
+        }
+    }
+}
+```
+#### Road Trip
+**`POST localhost:3000/api/v1/road_trip`**
+<ul><li>You will need to send your parameters through the body of the request, ex:</li></ul>
+
+```
+Content-Type: application/json
+Accept: application/json
+
+{
+  "origin": "Denver,CO",
+  "destination": "Pueblo,CO",
+  "api_key": "your_api_key"
+}
+```
+Example Response:
+```
+{
+    "data": {
+        "id": "null",
+        "type": "roadtrip",
+        "attributes": {
+            "start_city": "Denver,CO",
+            "end_city": "Pueblo,CO",
+            "travel_time": "01:44:22",
+            "weather_at_eta": {
+                "temperature": 81.3,
+                "conditions": "clear sky"
+            }
         }
     }
 }
