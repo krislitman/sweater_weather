@@ -53,8 +53,8 @@ class RoadTripFacade
   
   def good_weather(weather)
     {
-      temperature: weather[:temperature],
-      conditions: weather[:conditions]
+      temperature: weather.temperature,
+      conditions: weather.conditions
     }
   end
   

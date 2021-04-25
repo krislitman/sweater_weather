@@ -15,8 +15,8 @@ RSpec.describe HourlyWeather do
       expect(expected[0].keys).to include(:temperature)
       expect(expected[0].keys).to include(:conditions)
       expect(expected[0].keys).to include(:icon)
+      expect(expected[0].keys).to include(:date)
 
-      expect(expected[0].keys).not_to include(:date)
       expect(expected[0].keys).not_to include(:sunrise)
       expect(expected[0].keys).not_to include(:sunset)
       expect(expected[0].keys).not_to include(:max_temp)

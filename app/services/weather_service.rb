@@ -26,7 +26,7 @@ class WeatherService
     expected = data.map do |hour|
       HourlyWeather.new(hour)
     end
-    the_one = expected.find do |hour|
+    expected.find do |hour|
       hour.hour_date == time[9..10] &&
       hour.time[6..7] == time[6..7] &&
       hour.time[0..1] == time[0..1]
