@@ -50,7 +50,7 @@ your local machine for development and testing purposes.
 
 #### Retrieve weather for a city
 **`GET localhost:3000/api/v1/forecast`**
-<ul><li>Enter a city and state with a **location** query parameter, ex: 'Tampa,FL'</li></ul>
+<ul><li>Enter a city and state with a 'location' query parameter, ex: 'Tampa,FL'</li></ul>
 Example Response:
 
 ```{
@@ -70,7 +70,7 @@ Example Response:
 
 #### Background Image for the City
 **`GET localhost:3000/api/v1/backgrounds`**
-<ul><li>Enter a city and state with a **location** query parameter, ex: 'Denver,CO'</li></ul>
+<ul><li>Enter a city and state with a 'location' query parameter, ex: 'Denver,CO'</li></ul>
 Example Response:
 
 ```{
