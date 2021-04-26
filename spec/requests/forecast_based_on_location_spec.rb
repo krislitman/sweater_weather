@@ -65,7 +65,7 @@ RSpec.describe 'Retrieve weather for a city', type: :request do
   end
   scenario 'Sad Path ~ Integer doesnt work' do
     params = {
-      location: '123456789'
+      location: '123456789000'
     }
     get api_v1_forecast_path, params: params
     data = JSON.parse(response.body, symbolize_names: true)

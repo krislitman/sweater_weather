@@ -76,4 +76,5 @@ VCR.configure do |config|
   config.filter_sensitive_data('DONT_LOOK') { Figaro.env.key }
   config.filter_sensitive_data('DONT_LOOK_AGAIN') { Figaro.env.appid }
   config.default_cassette_options = { re_record_interval: 2.days }
+  config.allow_http_connections_when_no_cassette = true
 end

@@ -28,8 +28,8 @@ class WeatherService
     end
     expected.find do |hour|
       hour.hour_date == time[9..10] &&
-        hour.time[6..7] == time[6..7] &&
-        hour.time[0..1] == time[0..1]
+      hour.time[6..7] == time[6..7] &&
+      hour.time[0..1] == time[0..1]
     end
   end
 

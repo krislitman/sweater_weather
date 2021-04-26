@@ -77,7 +77,6 @@ RSpec.describe 'Happy Path Road Trip', type: :request do
 
       post '/api/v1/road_trip', headers: headers, params: JSON.generate(body)
       expected = JSON.parse(response.body, symbolize_names: true)
-
       expect(response).to be_successful
       expect(response.status).to eq(201)
       expect(expected[:data][:id]).to eq('null')
