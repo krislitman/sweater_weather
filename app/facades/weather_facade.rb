@@ -14,8 +14,11 @@ class WeatherFacade
   end
 
   def find_location
-    attributes = MapService.lat_and_long(@location)
-    @lat_and_long = MapQuest.new(attributes)
+    Rails.cache.fetch("#{@location}/city_state",
+    expires_in: 1.day) do
+      attributes = MapService.lat_and_long(@location)
+      @lat_and_long = MapQuest.new(attributes)
+    end
   end
 
   def find_forecast

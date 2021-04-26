@@ -29,9 +29,10 @@ RSpec.describe BackgroundsFacade do
     VCR.use_cassette('facades/backgrounds_facade/time_of_day',
     match_requests_on: %i[body]) do |cassette|
       Timecop.freeze(cassette.originally_recorded_at || Time.now) do
+        allow_any_instance_of(BackgroundsFacade).to receive(:find_time).and_return("09 00 PM")
         expected = BackgroundsFacade.new('Tampa,FL')
         expect(expected.time_of_day).to be_a(String)
-        expect(expected.time_of_day).to eq("evening clear sky")
+        expect(expected.time_of_day).to include("evening")
       end
     end
   end
@@ -39,10 +40,11 @@ RSpec.describe BackgroundsFacade do
     VCR.use_cassette('facades/backgrounds_facade/time_of_day_2',
     match_requests_on: %i[body]) do |cassette|
       Timecop.freeze(cassette.originally_recorded_at || Time.now) do
+        allow_any_instance_of(BackgroundsFacade).to receive(:find_time).and_return("07 00 PM")
         expected = BackgroundsFacade.new('London,UK')
 
         expect(expected.time_of_day).to be_a(String)
-        expect(expected.time_of_day).to eq("evening overcast clouds")
+        expect(expected.time_of_day).to include("evening")
       end
     end
   end
@@ -54,7 +56,7 @@ RSpec.describe BackgroundsFacade do
         expected = BackgroundsFacade.new('Tampa,FL')
 
         expect(expected.time_of_day).to be_a(String)
-        expect(expected.time_of_day).to eq("afternoon broken clouds")
+        expect(expected.time_of_day).to include("afternoon")
       end
     end
   end
@@ -66,7 +68,7 @@ RSpec.describe BackgroundsFacade do
         expected = BackgroundsFacade.new('Tampa,FL')
         
         expect(expected.time_of_day).to be_a(String)
-        expect(expected.time_of_day).to eq("morning overcast clouds")
+        expect(expected.time_of_day).to include("morning")
       end
     end
   end
@@ -78,7 +80,7 @@ RSpec.describe BackgroundsFacade do
         expected = BackgroundsFacade.new('Tampa,FL')
 
         expect(expected.time_of_day).to be_a(String)
-        expect(expected.time_of_day).to eq("morning overcast clouds")
+        expect(expected.time_of_day).to include("morning")
       end
     end
   end
@@ -90,7 +92,7 @@ RSpec.describe BackgroundsFacade do
         expected = BackgroundsFacade.new('Tampa,FL')
 
         expect(expected.time_of_day).to be_a(String)
-        expect(expected.time_of_day).to eq("night overcast clouds")
+        expect(expected.time_of_day).to include("night")
       end
     end
   end
@@ -102,7 +104,7 @@ RSpec.describe BackgroundsFacade do
         expected = BackgroundsFacade.new('Tampa,FL')
 
         expect(expected.time_of_day).to be_a(String)
-        expect(expected.time_of_day).to eq("night overcast clouds")
+        expect(expected.time_of_day).to include("night")
       end
     end
   end
