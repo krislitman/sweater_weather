@@ -195,6 +195,7 @@ To run the full test suite you will need to run the command:
 - VCR
 - Webmock
 - Shoulda Matchers
+- Timecop
 - Simplecov
 - Rubocop
 
