@@ -51,7 +51,7 @@ your local machine for development and testing purposes.
 ### Redis
 
 You will need to have Redis installed on your local machine to run the test suite correctly.
-Please follow these instructions to install Redis: [Redis](https://redis.io/download)
+Please follow these instructions to install Redis: [Redis](https://redis.io/download).
 Run `redis-server` before running the test suite.
 
 ### Check for security vulnerabilities
