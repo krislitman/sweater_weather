@@ -5,20 +5,24 @@ class WeatherFacade
               :daily_weather,
               :hourly_weather
 
-  def initialize(location)
+  def initialize(location, units = 'imperial')
     @location = location
     @lat_and_long = find_location
+    @units = units
     @forecast = find_forecast
     @current_weather = current_weather
   end
 
   def find_location
-    attributes = MapService.lat_and_long(@location)
-    @lat_and_long = MapQuest.new(attributes)
+    Rails.cache.fetch("#{@location}/city_state",
+    expires_in: 1.day) do
+      attributes = MapService.lat_and_long(@location)
+      @lat_and_long = MapQuest.new(attributes)
+    end
   end
 
   def find_forecast
-    forecast = WeatherService.find_forecast(@lat_and_long)
+    forecast = WeatherService.find_forecast(@lat_and_long, @units)
     @current_weather = CurrentWeather.new(forecast)
     @daily_weather = next_five_days(forecast[:daily])
     @hourly_weather = next_eight_hours(forecast[:hourly])

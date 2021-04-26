@@ -52,7 +52,8 @@ your local machine for development and testing purposes.
 
 #### Retrieve weather for a city
 **`GET localhost:3000/api/v1/forecast`**
-<ul><li>Enter a city and state with a 'location' query parameter, ex: 'Tampa,FL'</li></ul>
+<ul><li>Enter a city and state with a 'location' query parameter, ex: 'Tampa,FL'</li>
+<li>Change the units of temperature by including a 'units' parameter, ex: 'metric'</li></ul>
 Example Response:
 
 ```{
