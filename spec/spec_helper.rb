@@ -22,6 +22,7 @@ SimpleCov.add_filter "app/channels"
 SimpleCov.add_filter "app/jobs"
 SimpleCov.add_filter "app/mailers"
 SimpleCov.add_filter "app/models/application_record.rb"
+SimpleCov.add_filter "app/models/slug.rb"
 
 RSpec.configure do |config|
   # rspec-expectations config goes here. You can use an alternate

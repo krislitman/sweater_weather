@@ -21,6 +21,11 @@ gem 'figaro'
 gem 'faraday'
 # Fast JSON API for serializers
 gem 'fast_jsonapi'
+# Redis
+gem 'redis-rails'
+gem 'redis-namespace'
+gem 'redis'
+gem 'redis-rack-cache'
 
 group :development, :test do
   gem 'pry'
@@ -34,6 +39,7 @@ end
 group :development do
   gem 'listen', '>= 3.0.5', '< 3.2'
   gem 'rubocop-rails'
+  gem 'brakeman'
 end
 
 group :test do

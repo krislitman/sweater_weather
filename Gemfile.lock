@@ -50,6 +50,7 @@ GEM
     bcrypt (3.1.16)
     bootsnap (1.7.4)
       msgpack (~> 1.0)
+    brakeman (5.0.0)
     builder (3.2.4)
     capybara (3.35.3)
       addressable
@@ -118,6 +119,8 @@ GEM
     puma (3.12.6)
     racc (1.5.2)
     rack (2.2.3)
+    rack-cache (1.12.1)
+      rack (>= 0.4)
     rack-test (1.1.0)
       rack (>= 1.0, < 3)
     rails (5.2.5)
@@ -149,6 +152,28 @@ GEM
     rb-fsevent (0.10.4)
     rb-inotify (0.10.1)
       ffi (~> 1.0)
+    redis (4.2.5)
+    redis-actionpack (5.2.0)
+      actionpack (>= 5, < 7)
+      redis-rack (>= 2.1.0, < 3)
+      redis-store (>= 1.1.0, < 2)
+    redis-activesupport (5.2.0)
+      activesupport (>= 3, < 7)
+      redis-store (>= 1.3, < 2)
+    redis-namespace (1.8.1)
+      redis (>= 3.0.4)
+    redis-rack (2.1.3)
+      rack (>= 2.0.8, < 3)
+      redis-store (>= 1.2, < 2)
+    redis-rack-cache (2.2.1)
+      rack-cache (>= 1.10, < 2)
+      redis-store (>= 1.6, < 2)
+    redis-rails (5.0.2)
+      redis-actionpack (>= 5.0, < 6)
+      redis-activesupport (>= 5.0, < 6)
+      redis-store (>= 1.2, < 2)
+    redis-store (1.9.0)
+      redis (>= 4, < 5)
     regexp_parser (2.1.1)
     rexml (3.2.5)
     rspec (3.10.0)
@@ -229,6 +254,7 @@ DEPENDENCIES
   active_designer
   bcrypt (~> 3.1.7)
   bootsnap (>= 1.1.0)
+  brakeman
   capybara
   faraday
   fast_jsonapi
@@ -239,6 +265,10 @@ DEPENDENCIES
   pry
   puma (~> 3.11)
   rails (~> 5.2.5)
+  redis
+  redis-namespace
+  redis-rack-cache
+  redis-rails
   rspec-rails (~> 4.0.1)
   rubocop-rails
   shoulda-matchers (~> 3.1)
