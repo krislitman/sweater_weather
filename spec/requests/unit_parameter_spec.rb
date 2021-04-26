@@ -10,7 +10,7 @@ RSpec.describe 'Add Unit Query Parameter', type: :request do
       }
       get api_v1_forecast_path, params: params
       data = JSON.parse(response.body, symbolize_names: true)
-      
+      # require 'pry'; binding.pry
       expect(response).to be_successful
       expect(response.status).to eq(200)
       expect(data[:data][:attributes][:current_weather].keys).to include(:temperature)

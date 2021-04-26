@@ -14,6 +14,7 @@ class WeatherFacade
   end
 
   def find_location
+    return nil if @location.to_i.to_s == @location
     Rails.cache.fetch("#{@location}/city_state",
     expires_in: 1.day) do
       attributes = MapService.lat_and_long(@location)

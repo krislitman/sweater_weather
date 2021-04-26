@@ -32,7 +32,7 @@ RSpec.describe 'Destination City Forecast And Salary', type: :request do
     }
     get api_v1_salaries_path, params: params
     expected = JSON.parse(response.body, symbolize_names: true)
-    
+    # require 'pry'; binding.pry
     expect(response).to be_successful
     expect(response.status).to eq(200)
     expect(expected[:data][:attributes][:destination]).to eq('denver')
