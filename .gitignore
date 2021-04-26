@@ -32,4 +32,7 @@
 /active_designer
 
 # Brakeman
-/output_file
+output_file
+
+# REdis
+dump.rdb

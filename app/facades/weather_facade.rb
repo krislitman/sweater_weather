@@ -21,7 +21,6 @@ class WeatherFacade
   end
 
   def find_forecast
-    # require 'pry'; binding.pry
     forecast = WeatherService.find_forecast(@lat_and_long, @units)
     @current_weather = CurrentWeather.new(forecast)
     @daily_weather = next_five_days(forecast[:daily])
