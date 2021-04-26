@@ -5,9 +5,10 @@ class WeatherFacade
               :daily_weather,
               :hourly_weather
 
-  def initialize(location)
+  def initialize(location, units = 'imperial')
     @location = location
     @lat_and_long = find_location
+    @units = units
     @forecast = find_forecast
     @current_weather = current_weather
   end
@@ -18,7 +19,7 @@ class WeatherFacade
   end
 
   def find_forecast
-    forecast = WeatherService.find_forecast(@lat_and_long)
+    forecast = WeatherService.find_forecast(@lat_and_long, @units)
     @current_weather = CurrentWeather.new(forecast)
     @daily_weather = next_five_days(forecast[:daily])
     @hourly_weather = next_eight_hours(forecast[:hourly])
