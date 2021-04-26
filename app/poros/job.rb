@@ -5,7 +5,18 @@ class Job
 
   def initialize(data)
     @title = data[:job][:title]
-    @min =  data[:salary_percentiles][:percentile_25]
-    @max =  data[:salary_percentiles][:percentile_75]
+    @min = normalize_salary(data, :percentile_25)
+    @max = normalize_salary(data, :percentile_75)
+  end
+
+  def normalize_salary(data, percentile)
+    find_min = data[:salary_percentiles][percentile]
+    require 'pry'; binding.pry
+    salary = find_min.floor(2).to_s.prepend('$')
+    if salary.length == 9
+      salary.chars.insert(3,',').join("")
+    elsif salary.length == 10
+      salary.chars.insert(4,',').join("")
+    end
   end
 end

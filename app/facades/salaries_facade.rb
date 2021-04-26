@@ -2,7 +2,7 @@ class SalariesFacade
   attr_reader :destination,
               :forecast,
               :salaries
-              
+
   def initialize(salaries, destination)
     @destination = destination
     @forecast = find_forecast
@@ -11,6 +11,9 @@ class SalariesFacade
 
   def find_forecast
     facade = WeatherFacade.new(@destination)
-    facade.current_weather
+    {
+      summary: facade.current_weather.conditions.titleize,
+      temperature: facade.current_weather.temperature
+    }
   end
 end
