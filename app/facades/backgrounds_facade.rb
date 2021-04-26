@@ -31,15 +31,15 @@ class BackgroundsFacade
   def time_of_day
     if @time[1].to_i >= 6 && @time[6] == 'A'
       "morning #{@conditions}"
-    elsif @time[0].to_i == 1 && @time[6] == 'P' && @time[1].to_i == 2 
+    elsif @time[0].to_i == 1 && @time[6] == 'P' && @time[1].to_i == 2
       "morning #{@conditions}"
     elsif @time[1].to_i >= 1 && @time[1].to_i <= 5 && @time[6] == 'P' &&
-      @time[0].to_i != 1
+          @time[0].to_i != 1
       "afternoon #{@conditions}"
     elsif @time[1].to_i >= 6 && @time[6] == 'P'
       "evening #{@conditions}"
-    elsif (@time[1].to_i <= 5 && @time[6] == 'A') || 
-      (@time[0].to_i == 1 && @time[6] == 'P')
+    elsif (@time[1].to_i <= 5 && @time[6] == 'A') ||
+          (@time[0].to_i == 1 && @time[6] == 'P')
       "night #{@conditions}"
     end
   end
