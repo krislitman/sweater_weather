@@ -11,7 +11,7 @@ RSpec.describe SalariesService do
     expect(expected[0].min).to be_a(String)
     expect(expected[0].max).to be_a(String)
   end
-  it '#relevant_jobs' do
+  it '#find_relevant_jobs' do
     job1 = Job.new(
       {:job=>
       {:id=>"COPYWRITER", 
@@ -36,7 +36,7 @@ RSpec.describe SalariesService do
           :percentile_50=>51604.570316663645, 
           :percentile_75=>62106.68549841864}})
     jobs = [job1, job2, job3]
-    expected = SalariesService.relevant_jobs(jobs)
+    expected = SalariesService.find_relevant_jobs(jobs)
 
     expect(expected).to be_an(Array)
     expect(expected.count).to eq(1)
