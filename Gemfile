@@ -21,6 +21,11 @@ gem 'figaro'
 gem 'faraday'
 # Fast JSON API for serializers
 gem 'fast_jsonapi'
+# Redis
+gem 'redis-rails'
+gem 'redis-namespace'
+gem 'redis'
+gem 'redis-rack-cache'
 
 group :development, :test do
   gem 'pry'
