@@ -13,7 +13,7 @@
   - [Endpoints](#endpoints)
   - [Runing the tests](#running-the-tests)
   - [Built With](#built-with)
-  - [Versioning](#versioning)
+  - [Versioning](#versions)
   - [Acknowledgements](#acknowledgements)
 
 ## Author
