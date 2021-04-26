@@ -1,4 +1,8 @@
 class SalariesService
+  ALL_JOBS = ['Data Analyst', 'Data Scientist',
+    'Mobile Developer', 'QA Engineer', 'Software Engineer',
+    'Systems Administrator', 'Web Developer']
+
   def self.destination_salaries(destination)
     response = conn.get("api/urban_areas/slug:#{destination}/salaries")
     expected = JSON.parse(response.body, symbolize_names: true)
@@ -10,10 +14,7 @@ class SalariesService
 
   def self.relevant_jobs(jobs)
     jobs.find_all do |job|
-      job.title == 'Data Analyst' || job.title == 'Data Scientist' ||
-      job.title == 'Mobile Developer' || job.title == 'QA Engineer' ||
-      job.title == 'Software Engineer' || job.title == 'Systems Administrator' ||
-      job.title == 'Web Developer'
+      job if ALL_JOBS.include?(job.title)
     end
   end
 
