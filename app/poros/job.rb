@@ -11,12 +11,13 @@ class Job
 
   def normalize_salary(data, percentile)
     find_min = data[:salary_percentiles][percentile]
-    require 'pry'; binding.pry
     salary = find_min.floor(2).to_s.prepend('$')
     if salary.length == 9
       salary.chars.insert(3,',').join("")
     elsif salary.length == 10
       salary.chars.insert(4,',').join("")
+    elsif salary.length == 8
+      salary.chars.insert(3,',').join("").concat('0')
     end
   end
 end
