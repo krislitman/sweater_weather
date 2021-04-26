@@ -10,10 +10,10 @@ class SalariesFacade
   end
 
   def find_forecast
-    facade = WeatherFacade.new(@destination)
+    complete_forecast = WeatherFacade.new(@destination)
     {
-      summary: facade.current_weather.conditions.titleize,
-      temperature: facade.current_weather.temperature
+      summary: complete_forecast.current_weather.conditions.titleize,
+      temperature: complete_forecast.current_weather.temperature
     }
   end
 end

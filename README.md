@@ -177,6 +177,29 @@ Example Response:
     }
 }
 ```
+#### Destination Tech Salaries
+**`GET localhost:3000/api/v1/salaries`**
+<ul><li>Enter a city with a 'destination' query parameter for salaries in the tech industry, ex: 'miami'</li>
+Example Response:
+
+```
+{
+    "data": {
+        "id": "null",
+        "type": "salaries",
+        "attributes": {
+            "destination": "miami",
+            "forecast": {
+                "summary": "Broken Clouds",
+                "temperature": 83.12
+            },
+            "salaries": [
+                {
+                    "title": "Data Scientist",
+                    "min": "$72,490.04",
+                    "max": "$105,784.61"
+                }...
+```
 
 ## Running the tests 
 
@@ -215,3 +238,5 @@ To run the full test suite you will need to run the command:
 - [OpenWeather One Call API](https://openweathermap.org/api/one-call-api)
 
 - [Flickr](https://www.flickr.com/services/developer/api/)
+
+- [Teleport](https://developers.teleport.org/api/)

@@ -1,5 +1,5 @@
 class Api::V1::SalariesController < ApplicationController
-  def tech_salaries
+  def destination_salaries
     begin
       salaries = SalariesFacade.new(params[:destination])
       render json: SalariesSerializer.new(salaries)
