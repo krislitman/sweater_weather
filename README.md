@@ -48,6 +48,11 @@ your local machine for development and testing purposes.
 4. Run rails s to start the rails server
 5. Enter endpoints (see below) into Postman to see JSON responses!
 
+### Check for security vulnerabilities
+
+Make sure you have run `bundle install` and that the Brakeman gem was successfully installed. 
+To see a report run `brakeman -q`
+
 ## Endpoints
 
 #### Retrieve weather for a city

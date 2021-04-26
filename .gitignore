@@ -30,3 +30,6 @@
 
 # Active Designer
 /active_designer
+
+# Brakeman
+/output_file
