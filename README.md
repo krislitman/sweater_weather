@@ -1,4 +1,4 @@
-# Sweater Weather
+<center># Sweater Weather</center>
 
 ### Rails API Application
 
