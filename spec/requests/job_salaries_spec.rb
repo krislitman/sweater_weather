@@ -48,4 +48,26 @@ RSpec.describe 'Destination City Forecast And Salary', type: :request do
     expect(response.status).to eq(200)
     expect(expected[:data][:attributes][:destination]).to eq('pittsburgh')
   end
+  scenario 'Sad Path ~ Does not work without parameters' do
+    params = {
+      destination: ''
+    }
+    get api_v1_salaries_path, params: params
+    expected = JSON.parse(response.body, symbolize_names: true)
+    
+    expect(response).not_to be_successful
+    expect(response.status).to eq(400)
+    expect(expected[:message][:invalid_request]).to eq("Your parameters are bad and you should feel bad")
+  end
+  scenario 'Sad Path ~ Does not work with a number' do
+    params = {
+      destination: '987654321'
+    }
+    get api_v1_salaries_path, params: params
+    expected = JSON.parse(response.body, symbolize_names: true)
+    
+    expect(response).not_to be_successful
+    expect(response.status).to eq(400)
+    expect(expected[:message][:invalid_request]).to eq("Your parameters are bad and you should feel bad")
+  end
 end
