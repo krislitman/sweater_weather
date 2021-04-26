@@ -10,8 +10,8 @@ class Job
   end
 
   def normalize_salary(data, percentile)
-    find_min = data[:salary_percentiles][percentile]
-    salary = find_min.floor(2).to_s.prepend('$')
+    find_salary = data[:salary_percentiles][percentile]
+    salary = find_salary.floor(2).to_s.prepend('$')
     if salary.length == 9
       salary.chars.insert(3,',').join("")
     elsif salary.length == 10
