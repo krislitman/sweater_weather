@@ -8,9 +8,10 @@ RSpec.describe 'User Registration', type: :request do
       "password": "",
       "password_confirmation": ""
     }
-    headers = { 'CONTENT_TYPE' => 'application/json', 'ACCEPT' => 'application/json'}
+    headers = { 'CONTENT_TYPE' => 'application/json',
+       'ACCEPT' => 'application/json'}
 
-    post "/api/v1/users", headers: headers, params: JSON.generate(params)
+    post api_v1_users_path, headers: headers, params: JSON.generate(params)
     expected = JSON.parse(response.body, symbolize_names: true)
 
     expect(response).not_to be_successful
@@ -27,16 +28,17 @@ RSpec.describe 'User Registration', type: :request do
       "password": "this_is_my_first_attempt",
       "password_confirmation": "oh_no_i_dont_match"
     }
-    headers = { 'CONTENT_TYPE' => 'application/json', 'ACCEPT' => 'application/json'}
+    headers = { 'CONTENT_TYPE' => 'application/json',
+       'ACCEPT' => 'application/json'}
     
-    post "/api/v1/users", headers: headers, params: JSON.generate(params)
+    post api_v1_users_path, headers: headers, params: JSON.generate(params)
     expected = JSON.parse(response.body, symbolize_names: true)
 
     expect(response).not_to be_successful
     expect(response.status).to eq 400
     expect(expected[:message][:invalid_request]).to include("Password confirmation doesn't match Password")
   end
-  scenario 'Sad Path ~ If the email is taken it wont do what you want' do
+  scenario 'Sad Path ~ The user exists there cant be a duplicate account' do
     User.destroy_all
     User.create(
       email: "email@example.com",
@@ -47,11 +49,12 @@ RSpec.describe 'User Registration', type: :request do
       "password": "password",
       "password_confirmation": "password"
     }
-    headers = { 'CONTENT_TYPE' => 'application/json', 'ACCEPT' => 'application/json'}
-
-    post "/api/v1/users", headers: headers, params: JSON.generate(params)
-    expected = JSON.parse(response.body, symbolize_names: true)
+    headers = { 'CONTENT_TYPE' => 'application/json',
+       'ACCEPT' => 'application/json'}
     
+    post api_v1_users_path, headers: headers, params: JSON.generate(params)
+    expected = JSON.parse(response.body, symbolize_names: true)
+
     expect(response).not_to be_successful
     expect(response.status).to eq 400
     expect(expected[:message][:invalid_request]).to include("Email has already been taken")
@@ -63,9 +66,10 @@ RSpec.describe 'User Registration', type: :request do
       "password": "password",
       "password_confirmation": "password"
     }
-    headers = { 'CONTENT_TYPE' => 'application/json', 'ACCEPT' => 'application/json'}
+    headers = { 'CONTENT_TYPE' => 'application/json',
+       'ACCEPT' => 'application/json'}
 
-    post "/api/v1/users", headers: headers, params: JSON.generate(params)
+    post api_v1_users_path, headers: headers, params: JSON.generate(params)
     expected = JSON.parse(response.body, symbolize_names: true)
     
     expect(response).to be_successful

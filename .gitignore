@@ -27,3 +27,6 @@
 
 # SimpleCov
 /coverage
+
+# Active Designer
+/active_designer

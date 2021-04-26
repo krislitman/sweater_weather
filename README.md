@@ -1,6 +1,8 @@
 # Sweater Weather
 
-Rails API Application
+### Rails API Application
+
+**Find the local forecast for your upcoming Road Trip!**
 
 ![giphy](https://media.giphy.com/media/za5xikuRr0OzK/giphy.gif)
 
@@ -8,7 +10,6 @@ Rails API Application
 
   - [Author](#author)
   - [Getting Started](#getting-started)
-  - [Overview](#overview)
   - [Endpoints](#endpoints)
   - [Runing the tests](#running-the-tests)
   - [Built With](#built-with)
@@ -25,11 +26,16 @@ Rails API Application
 
 ### API Keys
 
-Before getting started with installation, you will need to get an API key from both 
-[MapQuest's Geocoding API](https://developer.mapquest.com/documentation/geocoding-api/) 
-and [OpenWeather One Call API](https://openweathermap.org/api/one-call-api). 
-Please get your own copy and include them as environment variables with Figaro. 
-Run `figaro install` to add the application.yml file to your copy of the application.
+Before getting started with installation, you will need to get an API key from
+[MapQuest's Geocoding API](https://developer.mapquest.com/documentation/geocoding-api/),
+[OpenWeather One Call API](https://openweathermap.org/api/one-call-api),
+and [Flickr API](https://www.flickr.com/services/developer/api/).
+Please sign up to get your own copy and include them as environment variables with Figaro. 
+Run `figaro install` to add your own application.yml file to the application.
+
+### Postman Collection
+
+View the Postman documentation here: [Postman Collection](https://documenter.getpostman.com/view/14824308/TzJybFVw)
 
 ### Installing
 
@@ -42,10 +48,6 @@ your local machine for development and testing purposes.
 4. Run rails s to start the rails server
 5. Enter endpoints (see below) into Postman to see JSON responses!
 
-## Overview
-
-### Database Schema
-  
 ## Endpoints
 
 #### Retrieve weather for a city
@@ -87,6 +89,7 @@ Example Response:
                 }
             }...
 ```
+
 #### User Registration
 **`POST localhost:3000/api/v1/users`**
 <ul><li>You will need to send your parameters through the body of the request, ex:</li></ul>
@@ -115,6 +118,65 @@ Example Response:
 }
 ```
 
+#### Login
+**`POST localhost:3000/api/v1/sessions`**
+<ul><li>You will need to send your parameters through the body of the request, ex:</li></ul>
+
+```
+Content-Type: application/json
+Accept: application/json
+
+{
+  "email": "whatever@example.com",
+  "password": "password",
+}
+```
+Example Response:
+```
+{
+    "data": {
+        "id": "1",
+        "type": "users",
+        "attributes": {
+            "email": "test@example.com",
+            "api_key": "your_api_key"
+        }
+    }
+}
+```
+#### Road Trip
+**`POST localhost:3000/api/v1/road_trip`**
+<ul><li>You will need to send your parameters through the body of the request, ex:</li></ul>
+
+```
+Content-Type: application/json
+Accept: application/json
+
+{
+  "origin": "Denver,CO",
+  "destination": "Pueblo,CO",
+  "api_key": "your_api_key"
+}
+```
+Example Response:
+```
+{
+    "data": {
+        "id": "null",
+        "type": "roadtrip",
+        "attributes": {
+            "start_city": "Denver,CO",
+            "end_city": "Pueblo,CO",
+            "travel_time": "01:44:22",
+            "weather_at_eta": {
+                "temperature": 81.3,
+                "conditions": "clear sky"
+            }
+        }
+    }
+}
+```
+
 ## Running the tests 
 
 **Testing with RSpec**
@@ -125,6 +187,7 @@ To run the full test suite you will need to run the command:
 
 - Rails
 - PostgreSQL
+- Postman
 - RSpec
 - Capybara
 - Fast JSON API

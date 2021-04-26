@@ -4,8 +4,10 @@ RSpec.describe 'Retrieve weather for a city', type: :request do
   scenario 'Happy Path ~ It can take in location and get forecast' do
     VCR.use_cassette('requests/forecast/happy_path_1',
     match_requests_on: %i[body]) do
-
-      get '/api/v1/forecast?location=denver,co'
+      params = {
+        location: 'denver,co'
+      }
+      get api_v1_forecast_path, params: params
       data = JSON.parse(response.body, symbolize_names: true)
       
       expect(response).to be_successful
@@ -19,8 +21,10 @@ RSpec.describe 'Retrieve weather for a city', type: :request do
   scenario 'Happy Path ~ It can take in another location and get forecast' do
     VCR.use_cassette('requests/forecast/happy_path_2',
     match_requests_on: %i[body]) do
-
-      get '/api/v1/forecast?location=tampa,fl'
+      params = {
+        location: 'tampa,fl'
+      }
+      get api_v1_forecast_path, params: params
       data = JSON.parse(response.body, symbolize_names: true)
       
       expect(response).to be_successful
@@ -33,9 +37,11 @@ RSpec.describe 'Retrieve weather for a city', type: :request do
   end
   scenario 'Happy Path ~ It can take in yet another location and get forecast' do
     VCR.use_cassette('requests/forecast/happy_path_3',
-    match_requests_on: %i[body]) do
-
-      get '/api/v1/forecast?location=portland,or'
+      match_requests_on: %i[body]) do
+      params = {
+        location: 'portland,or'
+      }
+      get api_v1_forecast_path, params: params
       data = JSON.parse(response.body, symbolize_names: true)
       
       expect(response).to be_successful
@@ -47,7 +53,10 @@ RSpec.describe 'Retrieve weather for a city', type: :request do
     end
   end
   scenario 'Sad Path ~ No parameters is a bad time' do
-    get '/api/v1/forecast?location='
+    params = {
+      location: ''
+    }
+    get api_v1_forecast_path, params: params
     data = JSON.parse(response.body, symbolize_names: true)
     
     expect(response).not_to be_successful
@@ -55,7 +64,10 @@ RSpec.describe 'Retrieve weather for a city', type: :request do
     expect(data[:message][:invalid_request]).to eq('Your parameters are bad and you should feel bad')
   end
   scenario 'Sad Path ~ Integer doesnt work' do
-    get '/api/v1/forecast?location=1234567890'
+    params = {
+      location: '123456789'
+    }
+    get api_v1_forecast_path, params: params
     data = JSON.parse(response.body, symbolize_names: true)
     
     expect(response).not_to be_successful

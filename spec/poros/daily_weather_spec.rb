@@ -4,7 +4,6 @@ RSpec.describe DailyWeather do
   it 'Can be created with attributes' do
     VCR.use_cassette('poros/daily_weather',
     match_requests_on: %i[body]) do
-
       facade = WeatherFacade.new('Dallas,TX')
       current = facade.daily_weather
       expected = JSON.parse(current.to_json, symbolize_names: true)
