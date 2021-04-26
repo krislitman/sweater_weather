@@ -222,6 +222,7 @@ To run the full test suite you will need to run the command:
 - Timecop
 - Simplecov
 - Rubocop
+- Brakeman
 
 ## Versions
 
