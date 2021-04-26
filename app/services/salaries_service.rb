@@ -1,5 +1,5 @@
 class SalariesService
-  ALL_JOBS = ['Data Analyst', 'Data Scientist',
+  TECH_JOBS = ['Data Analyst', 'Data Scientist',
     'Mobile Developer', 'QA Engineer', 'Software Engineer',
     'Systems Administrator', 'Web Developer']
 
@@ -14,7 +14,7 @@ class SalariesService
 
   def self.relevant_jobs(jobs)
     jobs.find_all do |job|
-      job if ALL_JOBS.include?(job.title)
+      job if TECH_JOBS.include?(job.title)
     end
   end
 
