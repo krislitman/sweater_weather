@@ -7,7 +7,7 @@ class WeatherService
       req.params['units'] = units
       req.params['exclude'] = 'alerts,minutely'
     end
-    expected = JSON.parse(response.body, symbolize_names: true)
+    JSON.parse(response.body, symbolize_names: true)
   end
 
   def self.road_trip(location, time)

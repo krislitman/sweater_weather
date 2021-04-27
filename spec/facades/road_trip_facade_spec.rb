@@ -81,7 +81,7 @@ RSpec.describe RoadTripFacade do
       facade = RoadTripFacade.new(params)
       expected = facade.find_arrival_time
       
-      expect(expected).to eq('current_weather')
+      expect(expected).to be_a(String)
     end
   end
 end

@@ -4,7 +4,7 @@ class Slug
   end
 
   def self.[]=(slug, id)
-    redis.hset(hash, slug, id)
+    redis.hset(hash, slug, id) 
   end
 
   private
