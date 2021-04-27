@@ -146,4 +146,76 @@ RSpec.describe 'Sad Path Road Trip', type: :request do
       expect(expected[:data][:attributes][:travel_time]).to eq('00:00:00')
     end
   end
+  scenario 'When I dont give an origin things blow up' do
+    VCR.use_cassette('requests/road_trip/sad_path_5',
+    match_requests_on: %i[body]) do
+      User.destroy_all
+      user1 = User.create(
+        email: "email@example.com",
+        password: "password"
+      )
+      body = {
+        "origin": "",
+        "destination": "Pittsburgh,PA",
+        "api_key": "#{user1.api_key}"
+      }
+      headers = { 'CONTENT_TYPE' => 'application/json',
+         'ACCEPT' => 'application/json'}
+
+      post '/api/v1/road_trip', headers: headers, params: JSON.generate(body)
+      expected = JSON.parse(response.body, symbolize_names: true)
+
+      expect(response).not_to be_successful
+      expect(response.status).to eq(400)
+      expect(expected[:message].keys).to include(:invalid_request)
+    end
+  end
+  scenario 'Youre gonna have a bad time without a destination' do
+    VCR.use_cassette('requests/road_trip/sad_path_6',
+    match_requests_on: %i[body]) do
+      User.destroy_all
+      user1 = User.create(
+        email: "email@example.com",
+        password: "password"
+      )
+      body = {
+        "origin": "Pittsburgh,PA",
+        "destination": "",
+        "api_key": "#{user1.api_key}"
+      }
+      headers = { 'CONTENT_TYPE' => 'application/json',
+         'ACCEPT' => 'application/json'}
+         
+      post '/api/v1/road_trip', headers: headers, params: JSON.generate(body)
+      expected = JSON.parse(response.body, symbolize_names: true)
+
+      expect(response).not_to be_successful
+      expect(response.status).to eq(400)
+      expect(expected[:message].keys).to include(:invalid_request)
+    end
+  end
+  scenario 'UNACCEPTABLE without either' do
+    VCR.use_cassette('requests/road_trip/sad_path_7',
+    match_requests_on: %i[body]) do
+      User.destroy_all
+      user1 = User.create(
+        email: "email@example.com",
+        password: "password"
+      )
+      body = {
+        "origin": "",
+        "destination": "",
+        "api_key": "#{user1.api_key}"
+      }
+      headers = { 'CONTENT_TYPE' => 'application/json',
+         'ACCEPT' => 'application/json'}
+
+      post '/api/v1/road_trip', headers: headers, params: JSON.generate(body)
+      expected = JSON.parse(response.body, symbolize_names: true)
+
+      expect(response).not_to be_successful
+      expect(response.status).to eq(400)
+      expect(expected[:message].keys).to include(:invalid_request)
+    end
+  end
 end

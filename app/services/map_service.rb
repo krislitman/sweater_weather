@@ -20,6 +20,8 @@ class MapService
     data[:route][:formattedTime]
   end
 
+  private
+
   def self.conn
     Faraday.new('http://www.mapquestapi.com')
   end

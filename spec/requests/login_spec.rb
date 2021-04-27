@@ -41,6 +41,63 @@ RSpec.describe 'Login', type: :request do
     expect(response.status).to eq(400)
     expect(expected[:message][:bad_credentials]).to include("Incorrect Credentials")
   end
+  scenario 'Sad Path ~ Empty makes things fail 1 of 3' do
+    User.destroy_all
+    User.create(
+      email: "email2@example.com",
+      password: "password"
+    )
+    params = {
+      "email": "",
+      "password": "",
+    }
+    headers = { 'CONTENT_TYPE' => 'application/json', 'ACCEPT' => 'application/json'}
+
+    post api_v1_sessions_path, headers: headers, params: JSON.generate(params)
+    expected = JSON.parse(response.body, symbolize_names: true)
+
+    expect(response).not_to be_successful
+    expect(response.status).to eq(400)
+    expect(expected[:message][:bad_credentials]).to include("Incorrect Credentials")
+  end
+  scenario 'Sad Path ~ Empty makes things fail 2 of 3' do
+    User.destroy_all
+    User.create(
+      email: "email2@example.com",
+      password: "password"
+    )
+    params = {
+      "email": "email2@example.com",
+      "password": "",
+    }
+    headers = { 'CONTENT_TYPE' => 'application/json', 'ACCEPT' => 'application/json'}
+
+    post api_v1_sessions_path, headers: headers, params: JSON.generate(params)
+    expected = JSON.parse(response.body, symbolize_names: true)
+
+    expect(response).not_to be_successful
+    expect(response.status).to eq(400)
+    expect(expected[:message][:bad_credentials]).to include("Incorrect Credentials")
+  end
+  scenario 'Sad Path ~ Empty makes things fail 3 of 3' do
+    User.destroy_all
+    User.create(
+      email: "email2@example.com",
+      password: "password"
+    )
+    params = {
+      "email": "",
+      "password": "password",
+    }
+    headers = { 'CONTENT_TYPE' => 'application/json', 'ACCEPT' => 'application/json'}
+
+    post api_v1_sessions_path, headers: headers, params: JSON.generate(params)
+    expected = JSON.parse(response.body, symbolize_names: true)
+
+    expect(response).not_to be_successful
+    expect(response.status).to eq(400)
+    expect(expected[:message][:bad_credentials]).to include("Incorrect Credentials")
+  end
   scenario 'Sad Path ~ If the user doesnt exist it still fails' do
     User.destroy_all
     params = {

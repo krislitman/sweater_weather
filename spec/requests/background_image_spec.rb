@@ -23,6 +23,17 @@ RSpec.describe 'Background Image for the City', type: :request do
     expect(response.status).to eq(400)
     expect(data[:message][:invalid_request]).to eq('Your parameters are bad and you should feel bad')
   end
+  scenario 'Sad Path ~ Weird string messes things up' do
+    params = {
+      location: 'HELLOWORLD FOO BAR'
+    }
+    get api_v1_backgrounds_path, params: params
+    data = JSON.parse(response.body, symbolize_names: true)
+    
+    expect(response).not_to be_successful
+    expect(response.status).to eq(400)
+    expect(data[:message][:invalid_request]).to eq('Your parameters are bad and you should feel bad')
+  end
   scenario 'Happy Path ~ Can retrieve background image' do
     VCR.use_cassette('requests/background_image/happy_path_1',
     match_requests_on: %i[body]) do

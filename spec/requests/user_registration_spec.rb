@@ -21,6 +21,24 @@ RSpec.describe 'User Registration', type: :request do
     expect(expected[:message][:invalid_request]).to include("Password can't be blank")
     expect(expected[:message][:invalid_request]).to include("Password confirmation doesn't match Password")
   end
+  scenario 'Sad Path ~ Cant be created with all empty fields' do
+    User.destroy_all
+    params = {
+      "email": "",
+      "password": "",
+      "password_confirmation": ""
+    }
+    headers = { 'CONTENT_TYPE' => 'application/json',
+       'ACCEPT' => 'application/json'}
+
+    post api_v1_users_path, headers: headers, params: JSON.generate(params)
+    expected = JSON.parse(response.body, symbolize_names: true)
+
+    expect(response).not_to be_successful
+    expect(response.status).to eq 400
+    expect(expected.keys).to include(:message)
+    expect(expected[:message].keys).to include(:invalid_request)
+  end
   scenario 'Sad Path ~ When passwords dont match you have a bad time' do
     User.destroy_all
     params = {

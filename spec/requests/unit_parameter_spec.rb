@@ -31,4 +31,19 @@ RSpec.describe 'Add Unit Query Parameter', type: :request do
       expect(data[:data][:attributes][:current_weather].keys).to include(:temperature)
     end
   end
+  scenario 'Sad Path ~ integer returns nil' do
+    VCR.use_cassette('requests/extensions/add_query_parameter_metric_sad',
+    match_requests_on: %i[body]) do
+      params = {
+        location: 'denver,co',
+        units: '12345'
+      }
+      get api_v1_forecast_path, params: params
+      data = JSON.parse(response.body, symbolize_names: true)
+      
+      expect(response).not_to be_successful
+      expect(response.status).to eq(400)
+      expect(data[:message].keys).to include(:invalid_request)
+    end
+  end
 end

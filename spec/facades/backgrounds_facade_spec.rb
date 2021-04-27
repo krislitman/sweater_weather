@@ -108,4 +108,26 @@ RSpec.describe BackgroundsFacade do
       end
     end
   end
+  it "Sad Path ~ Does not work without proper location" do
+    VCR.use_cassette('facades/backgrounds_facade/time_of_day_sad_1',
+      match_requests_on: %i[body]) do |cassette|
+      Timecop.freeze(cassette.originally_recorded_at || Time.now) do
+        allow_any_instance_of(BackgroundsFacade).to receive(:find_time).and_return("12 00 AM")
+        expected = BackgroundsFacade.new('12345')
+        
+        expect(expected.image).to be(nil)
+      end
+    end
+  end
+  it "Sad Path ~ Does not work without proper location 2" do
+    VCR.use_cassette('facades/backgrounds_facade/time_of_day_sad_2',
+      match_requests_on: %i[body]) do |cassette|
+      Timecop.freeze(cassette.originally_recorded_at || Time.now) do
+        allow_any_instance_of(BackgroundsFacade).to receive(:find_time).and_return("12 00 AM")
+        expected = BackgroundsFacade.new('')
+        
+        expect(expected.image).to be(nil)
+      end
+    end
+  end
 end

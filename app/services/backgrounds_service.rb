@@ -20,6 +20,8 @@ class BackgroundsService
     end
   end
 
+  private
+
   def self.conn
     Faraday.new('https://api.flickr.com')
   end

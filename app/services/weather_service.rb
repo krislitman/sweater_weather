@@ -1,6 +1,7 @@
 class WeatherService
   def self.find_forecast(location, units)
     begin
+      return nil if units.to_s == units.to_i.to_s
       response = conn.get('data/2.5/onecall') do |req|
         req.params['appid'] = Figaro.env.appid
         req.params['lat'] = location.lat
@@ -44,6 +45,8 @@ class WeatherService
       nil
     end
   end
+
+  private
 
   def self.conn
     Faraday.new('https://api.openweathermap.org')

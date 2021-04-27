@@ -17,11 +17,13 @@ class BackgroundsFacade
   end
 
   def find_conditions
+    return nil if @location.to_s == @location.to_i.to_s || @location.blank?
     facade = WeatherFacade.new(@location)
     @conditions = facade.current_weather.conditions
   end
 
   def background_image
+    return nil if @location.to_s == @location.to_i.to_s || @location.blank?
     @image = BackgroundsService.background_image(@location, @time_of_day_conditions)
     @image = BackgroundsService.background_image(@location) if @image.nil?
     @credit = @image.credit
