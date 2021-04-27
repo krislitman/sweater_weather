@@ -12,4 +12,25 @@ RSpec.describe MapService do
       expect(response[:results][0][:locations][0][:latLng][:lng]).to eq(-104.984853)
     end
   end
+  it 'Sad Path ~ Returns nil if no response' do
+    VCR.use_cassette('services/map_service_spec_sad_1',
+    match_requests_on: %i[body]) do
+      response = MapService.lat_and_long(1234567)
+      expect(response).to be(nil)
+    end
+  end
+  it 'Sad Path ~ Returns nil if travel time is wrong' do
+    VCR.use_cassette('services/map_service_spec_sad_2',
+    match_requests_on: %i[body]) do
+      response = MapService.travel_time(123, 456)
+      expect(response).to be(nil)
+    end
+  end
+  it 'Sad Path ~ Returns nil if travel time is wrong 2' do
+    VCR.use_cassette('services/map_service_spec_sad_3',
+    match_requests_on: %i[body]) do
+      response = MapService.travel_time("NO WHERE", "12345")
+      expect(response).to be(nil)
+    end
+  end
 end

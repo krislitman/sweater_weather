@@ -21,4 +21,20 @@ RSpec.describe BackgroundsService do
       expect(response.credit[:source]).to eq('flickr.com')
     end
   end
+  it 'Sad Path ~ Does not return image with poor request' do
+    VCR.use_cassette('services/backgrounds_service_spec_3',
+    match_requests_on: %i[body]) do
+      image = BackgroundsService.background_image(1235)
+      
+      expect(image).to be(nil)
+    end
+  end
+  it 'Sad Path ~ Does not return image with poor request 2' do
+    VCR.use_cassette('services/backgrounds_service_spec_4',
+    match_requests_on: %i[body]) do
+      image = BackgroundsService.background_image("NONONONONONO!")
+      
+      expect(image).to be(nil)
+    end
+  end
 end

@@ -14,10 +14,11 @@ class WeatherFacade
   end
 
   def find_location
-    return nil if @location.to_i.to_s == @location
-    
-    attributes = MapService.lat_and_long(@location)
-    Slug[@lat_and_long] = MapQuest.new(attributes)
+    return nil if @location.to_s == @location.to_i.to_s
+    Rails.cache.fetch "location #{@location}", expires_in: 1.week do
+      attributes = MapService.lat_and_long(@location)
+      @lat_and_long = MapQuest.new(attributes)
+    end
   end
 
   def find_forecast
