@@ -37,4 +37,12 @@ RSpec.describe BackgroundsService do
       expect(image).to be(nil)
     end
   end
+  it 'Sad Path ~ Does not return image with poor request 3' do
+    VCR.use_cassette('services/backgrounds_service_spec_4',
+    match_requests_on: %i[body]) do
+      image = BackgroundsService.background_image("")
+      
+      expect(image).to be(nil)
+    end
+  end
 end

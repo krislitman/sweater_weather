@@ -33,4 +33,11 @@ RSpec.describe MapService do
       expect(response).to be(nil)
     end
   end
+  it 'Sad Path ~ Returns nil if EMPTY' do
+    VCR.use_cassette('services/map_service_spec_sad_4',
+    match_requests_on: %i[body]) do
+      response = MapService.travel_time("", "")
+      expect(response).to be(nil)
+    end
+  end
 end
