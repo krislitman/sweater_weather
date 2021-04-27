@@ -34,7 +34,7 @@ class WeatherService
   def self.weather_data(data, time)
     begin
       expected = data.map do |hour|
-        HourlyWeather.new(hour)
+        RoadTripWeather.new(hour)
       end
       expected.find do |hour|
         hour.hour_date == time[9..10] &&

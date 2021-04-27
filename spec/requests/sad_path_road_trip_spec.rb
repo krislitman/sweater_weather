@@ -218,4 +218,28 @@ RSpec.describe 'Sad Path Road Trip', type: :request do
       expect(expected[:message].keys).to include(:invalid_request)
     end
   end
+  scenario 'Blank API key will not work' do
+    VCR.use_cassette('requests/road_trip/sad_path_8',
+    match_requests_on: %i[body]) do
+      User.destroy_all
+      user1 = User.create(
+        email: "email@example.com",
+        password: "password"
+      )
+      body = {
+        "origin": "miami,fl",
+        "destination": "tampa,fl",
+        "api_key": ""
+      }
+      headers = { 'CONTENT_TYPE' => 'application/json',
+         'ACCEPT' => 'application/json'}
+
+      post '/api/v1/road_trip', headers: headers, params: JSON.generate(body)
+      expected = JSON.parse(response.body, symbolize_names: true)
+      
+      expect(response).not_to be_successful
+      expect(response.status).to eq(401)
+      expect(expected[:message].keys).to include(:unauthorized)
+    end
+  end
 end

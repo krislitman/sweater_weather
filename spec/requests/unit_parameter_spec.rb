@@ -41,9 +41,8 @@ RSpec.describe 'Add Unit Query Parameter', type: :request do
       get api_v1_forecast_path, params: params
       data = JSON.parse(response.body, symbolize_names: true)
       
-      expect(response).not_to be_successful
-      expect(response.status).to eq(400)
-      expect(data[:message].keys).to include(:invalid_request)
+      expect(response).to be_successful
+      expect(data[:data][:attributes][:current_weather]).to be(nil)
     end
   end
 end

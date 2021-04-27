@@ -22,11 +22,15 @@ class WeatherFacade
   end
 
   def find_forecast
-    return nil if @location.to_s == @location.to_i.to_s || @location.blank? 
-    forecast = WeatherService.find_forecast(@lat_and_long, @units)
-    @current_weather = CurrentWeather.new(forecast)
-    @daily_weather = next_five_days(forecast[:daily])
-    @hourly_weather = next_eight_hours(forecast[:hourly])
+    begin
+      return nil if @location.to_s == @location.to_i.to_s || @location.blank? 
+      forecast = WeatherService.find_forecast(@lat_and_long, @units)
+      @current_weather = CurrentWeather.new(forecast)
+      @daily_weather = next_five_days(forecast[:daily])
+      @hourly_weather = next_eight_hours(forecast[:hourly])
+    rescue 
+      nil
+    end
   end
 
   def next_five_days(forecast)

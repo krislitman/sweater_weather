@@ -25,12 +25,12 @@ http_interactions:
       Connection:
       - keep-alive
       Date:
-      - Tue, 27 Apr 2021 02:25:00 GMT
+      - Tue, 27 Apr 2021 16:12:08 GMT
       Server:
       - Apache/2.4.46 (Ubuntu)
       Set-Cookie:
       - ccc=%7B%22needsConsent%22%3Afalse%2C%22managed%22%3A0%2C%22changed%22%3A0%2C%22info%22%3A%7B%22cookieBlock%22%3A%7B%22level%22%3A0%2C%22blockRan%22%3A0%7D%7D%7D;
-        expires=Thu, 27-May-2021 02:25:00 GMT; Max-Age=2592000; path=/; domain=.flickr.com
+        expires=Thu, 27-May-2021 16:12:08 GMT; Max-Age=2592000; path=/; domain=.flickr.com
       X-Content-Type-Options:
       - nosniff
       X-Frame-Options:
@@ -38,14 +38,14 @@ http_interactions:
       X-Cache:
       - Miss from cloudfront
       Via:
-      - 1.1 4034587c7184df936ffe61c7ddedcd7d.cloudfront.net (CloudFront)
+      - 1.1 81148d596ccabdf71245563094108fbf.cloudfront.net (CloudFront)
       X-Amz-Cf-Pop:
-      - MIA3-C2
+      - MIA3-C3
       X-Amz-Cf-Id:
-      - PNcnR5ZLCT3QA08sZlByn_ZnsSHux4VR_ZyZ2QGV2OFjH1dy-OjOVw==
+      - 1PObWOZSuDbNVG4-KDfMc_iHeSWchrKqtEnhnPI-oAhRFeksHDXSCQ==
     body:
       encoding: UTF-8
       string: '{"photos":{"page":1,"pages":17,"perpage":1,"total":"17","photo":[{"id":"26035054186","owner":"50687522@N00","secret":"0328787533","server":"1692","farm":2,"title":"Building
         LEDs","ispublic":1,"isfriend":0,"isfamily":0,"url_c":"https:\/\/live.staticflickr.com\/1692\/26035054186_0328787533_c.jpg","height_c":600,"width_c":800}]},"stat":"ok"}'
-  recorded_at: Tue, 27 Apr 2021 02:25:00 GMT
+  recorded_at: Tue, 27 Apr 2021 16:12:08 GMT
 recorded_with: VCR 6.0.0
