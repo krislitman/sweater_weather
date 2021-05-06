@@ -11,5 +11,5 @@ jobs:
       - checkout
       - run:
           name: Which bundler?
-          command: bundle -v
-      - ruby/bundle-install
+          command: cd turing; cd mod3; cd projects; cd sweater_weather; bundle -v
+      - bundle-install
