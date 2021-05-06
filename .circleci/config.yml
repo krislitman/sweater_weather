@@ -27,4 +27,4 @@ jobs:
       - run: bundle config set --local path 'turing/mod3/projects/sweater_weather'
 
       # Run the test suite
-      - run: bundle exec rpsec
+      - run: bundle exec rspec
