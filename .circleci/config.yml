@@ -6,12 +6,25 @@ jobs:
   build:
     docker:
       - image: circleci/ruby:2.6.3-stretch-node
+        environment:
+        PGHOST: localhost
+        PGUSER: sweater_weather
+        RAILS_ENV: test
+        REDIS_URL: redis://redis@localhost:6379
+      - image: postgres 13
+        environment:
+        POSTGRES_USER: sweater_weather
+        POSTGRES_DB: sweater_weather_test
+        POSTGRES_PASSWORD: ""
+
     executor: ruby/default
     steps:
       - checkout
+
+      # Setup the environment
       - run: gem install bundler:2.2.15
 
       - run: bundle config set --local path 'turing/mod3/projects/sweater_weather'
-      #     name: Which bundler?
-      #     command: bundle -v
-      # - ruby/bundle-install
+
+      # Run the test suite
+      - run: bundle exec rpsec
