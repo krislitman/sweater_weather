@@ -26,5 +26,7 @@ jobs:
 
       - run: bundle config set --local path 'turing/mod3/projects/sweater_weather'
 
+      - run: bundle install --local path 'turing/mod3/projects/sweater_weather'
+
       # Run the test suite
       - run: bundle exec rake
