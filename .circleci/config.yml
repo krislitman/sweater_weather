@@ -12,4 +12,4 @@ jobs:
       - run:
           name: Which bundler?
           command: cd turing; cd mod3; cd projects; cd sweater_weather; bundle -v
-      - bundle-install
+      - ruby/bundle-install
