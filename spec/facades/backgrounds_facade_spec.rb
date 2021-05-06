@@ -27,13 +27,11 @@ RSpec.describe BackgroundsFacade do
   end
   it "Can get the time of day" do
     VCR.use_cassette('facades/backgrounds_facade/time_of_day',
-    match_requests_on: %i[body]) do |cassette|
-      Timecop.freeze(cassette.originally_recorded_at || Time.now) do
+    match_requests_on: %i[body]) do
         allow_any_instance_of(BackgroundsFacade).to receive(:find_time).and_return("09 00 PM")
         expected = BackgroundsFacade.new('Tampa,FL')
         expect(expected.time_of_day).to be_a(String)
         expect(expected.time_of_day).to include("evening")
-      end
     end
   end
   it "Can get the time of day 2" do
