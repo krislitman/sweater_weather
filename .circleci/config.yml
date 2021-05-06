@@ -28,4 +28,5 @@ jobs:
       - run: bundle install --path "turing/mod3/projects/sweater_weather"
 
       # Run the test suite
+      - run: redis-server
       - run: bundle exec rake
