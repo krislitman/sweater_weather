@@ -7,15 +7,15 @@ jobs:
     docker:
       - image: circleci/ruby:2.6.3-stretch-node
         environment:
-        PGHOST: localhost
-        PGUSER: sweater_weather
-        RAILS_ENV: test
-        REDIS_URL: redis://redis@localhost:6379
+          PGHOST: localhost
+          PGUSER: sweater_weather
+          RAILS_ENV: test
+          REDIS_URL: redis://redis@localhost:6379
       - image: postgres 13
         environment:
-        POSTGRES_USER: sweater_weather
-        POSTGRES_DB: sweater_weather_test
-        POSTGRES_PASSWORD: ""
+          POSTGRES_USER: sweater_weather
+          POSTGRES_DB: sweater_weather_test
+          POSTGRES_PASSWORD: ""
 
     executor: ruby/default
     steps:
