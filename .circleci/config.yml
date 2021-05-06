@@ -10,6 +10,8 @@ jobs:
     steps:
       - checkout
       - run: gem install bundler:2.2.15
-          name: Which bundler?
-          command: bundle -v
-      - ruby/bundle-install
+
+      - run: bundle install --path turing/mod3/projects/sweater_weather
+      #     name: Which bundler?
+      #     command: bundle -v
+      # - ruby/bundle-install
