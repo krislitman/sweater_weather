@@ -235,6 +235,7 @@ To run the full test suite you will need to run the command:
 - Rubocop
 - Brakeman
 - Redis
+- Circle CI
 
 ## Versions
 
