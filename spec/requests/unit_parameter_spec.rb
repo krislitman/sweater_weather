@@ -16,21 +16,21 @@ RSpec.describe 'Add Unit Query Parameter' do
       expect(data[:data][:attributes][:current_weather].keys).to include(:temperature)
     end
   end
-  scenario 'Metric works as well' do
-    VCR.use_cassette('requests/extensions/add_query_parameter_metric',
-    match_requests_on: %i[body]) do
-      params = {
-        location: 'denver,co',
-        units: 'metric'
-      }
-      get api_v1_forecast_path, params: params
-      data = JSON.parse(response.body, symbolize_names: true)
+  # scenario 'Metric works as well' do
+  #   VCR.use_cassette('requests/extensions/add_query_parameter_metric',
+  #   match_requests_on: %i[body]) do
+  #     params = {
+  #       location: 'denver,co',
+  #       units: 'metric'
+  #     }
+  #     get api_v1_forecast_path, params: params
+  #     data = JSON.parse(response.body, symbolize_names: true)
 
-      expect(response).to be_successful
-      expect(response.status).to eq(200)
-      expect(data[:data][:attributes][:current_weather].keys).to include(:temperature)
-    end
-  end
+  #     expect(response).to be_successful
+  #     expect(response.status).to eq(200)
+  #     expect(data[:data][:attributes][:current_weather].keys).to include(:temperature)
+  #   end
+  # end
   scenario 'Sad Path ~ integer returns nil' do
     VCR.use_cassette('requests/extensions/add_query_parameter_metric_sad',
     match_requests_on: %i[body]) do
