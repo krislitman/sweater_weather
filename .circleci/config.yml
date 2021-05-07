@@ -18,14 +18,15 @@ jobs:
           POSTGRES_PASSWORD: POSTGRES_HOST_AUTH_METHOD=trust
       - image: circleci/redis:latest
     executor: ruby/default
+    environment:
+      key: ENV['key']
+      appid: ENV['appid']
+      api_key: ENV['api_key']
     steps:
       - checkout
       # Setup the environment
       - run: gem install bundler:2.2.15
-
       - run: bundle config set --local path 'turing/mod3/projects/sweater_weather'
-
       - run: bundle install --path "turing/mod3/projects/sweater_weather"
-
       # Run the test suite
       - run: bundle exec rake
