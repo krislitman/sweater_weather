@@ -1,0 +1,51 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.flickr.com/services/rest?api_key=DONT_LOOK_AT_ALL&extras=url_c&format=json&method=flickr.photos.search&nojsoncallback=1&per_page=1&text=Tampa%20FL%20skyline
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v1.4.1
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '348'
+      Connection:
+      - keep-alive
+      Date:
+      - Fri, 07 May 2021 17:38:30 GMT
+      Server:
+      - Apache/2.4.46 (Ubuntu)
+      Set-Cookie:
+      - ccc=%7B%22needsConsent%22%3Afalse%2C%22managed%22%3A0%2C%22changed%22%3A0%2C%22info%22%3A%7B%22cookieBlock%22%3A%7B%22level%22%3A0%2C%22blockRan%22%3A0%7D%7D%7D;
+        expires=Sun, 06-Jun-2021 17:38:30 GMT; Max-Age=2592000; path=/; domain=.flickr.com
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Cache:
+      - Miss from cloudfront
+      Via:
+      - 1.1 20f0da216a3d7d69d6c7e3cec1f1788e.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - MIA3-C2
+      X-Amz-Cf-Id:
+      - b5LcePdfrsybQS83mnCA7C2r-A-zBlucJrbzUVr-6iCdRX9b2FtLig==
+    body:
+      encoding: UTF-8
+      string: '{"photos":{"page":1,"pages":1604,"perpage":1,"total":"1604","photo":[{"id":"51109599422","owner":"57835821@N00","secret":"880e545129","server":"65535","farm":66,"title":"Afternoon
+        Walk","ispublic":1,"isfriend":0,"isfamily":0,"url_c":"https:\/\/live.staticflickr.com\/65535\/51109599422_880e545129_c.jpg","height_c":600,"width_c":800}]},"stat":"ok"}'
+  recorded_at: Fri, 07 May 2021 17:38:30 GMT
+recorded_with: VCR 6.0.0
