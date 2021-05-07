@@ -11,7 +11,7 @@ RSpec.describe 'Add Unit Query Parameter', type: :request do
       get api_v1_forecast_path, params: params
       data = JSON.parse(response.body, symbolize_names: true)
 
-      # expect(response).to be_successful
+      expect(response).to be_successful
       expect(response.status).to eq(200)
       expect(data[:data][:attributes][:current_weather].keys).to include(:temperature)
     end
@@ -26,7 +26,7 @@ RSpec.describe 'Add Unit Query Parameter', type: :request do
       get api_v1_forecast_path, params: params
       data = JSON.parse(response.body, symbolize_names: true)
 
-      # expect(response).to be_successful
+      expect(response).to be_successful
       expect(response.status).to eq(200)
       expect(data[:data][:attributes][:current_weather].keys).to include(:temperature)
     end
@@ -41,7 +41,7 @@ RSpec.describe 'Add Unit Query Parameter', type: :request do
       get api_v1_forecast_path, params: params
       data = JSON.parse(response.body, symbolize_names: true)
       
-      # expect(response).to be_successful
+      expect(response).to be_successful
       expect(data[:data][:attributes][:current_weather]).to be(nil)
     end
   end

@@ -1,4 +1,5 @@
 require 'rails_helper'
+require './app/facades/road_trip_facade.rb'
 
 RSpec.describe RoadTripFacade do
   it "It can return a road trip with attributes" do
