@@ -26,6 +26,7 @@ gem 'redis-rails'
 gem 'redis-namespace'
 gem 'redis'
 gem 'redis-rack-cache'
+gem 'mock_redis'
 
 group :development, :test do
   gem 'pry'

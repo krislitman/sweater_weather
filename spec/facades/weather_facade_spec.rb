@@ -9,8 +9,8 @@ RSpec.describe WeatherFacade do
       expect(expected).to be_an_instance_of(WeatherFacade)
       expect(expected.location).to eq('Denver,CO')
       expect(expected.lat_and_long).to be_an_instance_of(MapQuest)
-      expect(expected.lat_and_long.lat).to eq(39.738453)
-      expect(expected.lat_and_long.lng).to eq(-104.984853)
+      expect(expected.lat_and_long.lat).to eq(39.739154)
+      expect(expected.lat_and_long.lng).to eq(-104.984703)
     end
   end
   it "Can find current_weather" do
