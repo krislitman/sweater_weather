@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe 'Add Unit Query Parameter', type: :request do
+RSpec.describe 'Add Unit Query Parameter' do
   scenario 'Can change units to ~metric~ or default-imperial' do
     VCR.use_cassette('requests/extensions/add_query_parameter',
     match_requests_on: %i[body]) do
