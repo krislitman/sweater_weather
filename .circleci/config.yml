@@ -25,9 +25,6 @@ jobs:
       api_key: ENV['api_key']
     steps:
       - checkout
-      - restore_cache:
-          keys:
-            - location {{ .location }}
       # Setup the environment
       - run: gem install bundler:2.2.15
       - run: bundle config set --local path 'turing/mod3/projects/sweater_weather'
@@ -41,4 +38,6 @@ jobs:
           name: Wait for Redis
           command: dockerize -wait tcp://localhost:6379 -timeout 1m
       # Run the test suite
+      - run: bundle exec rails db:create
+      - run: bundle exec rails db:schema:load
       - run: bundle exec rspec
