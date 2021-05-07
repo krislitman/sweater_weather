@@ -5,7 +5,7 @@ class WeatherFacade
               :daily_weather,
               :hourly_weather
 
-  def initialize(location = "denver,co", units = 'imperial')
+  def initialize(location, units = 'imperial')
     @location = location
     @lat_and_long = find_location
     @units = units
