@@ -23,6 +23,6 @@ class MapService
   private
 
   def self.conn
-    Faraday.new('http://www.open.mapquestapi.com')
+    Faraday.new('http://open.mapquestapi.com')
   end
 end
