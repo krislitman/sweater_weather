@@ -25,6 +25,9 @@ jobs:
       api_key: ENV['api_key']
     steps:
       - checkout
+      - restore_cache:
+          keys:
+            - location {{ .location }}
       # Setup the environment
       - run: gem install bundler:2.2.15
       - run: bundle config set --local path 'turing/mod3/projects/sweater_weather'
