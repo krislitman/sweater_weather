@@ -4,8 +4,9 @@ RSpec.describe WeatherService do
   it 'Returns proper data from OpenWeatherMap' do
     VCR.use_cassette('services/weather_service_spec',
     match_requests_on: %i[body]) do
-      facade = WeatherFacade.new('Tampa,FL')
-      response = WeatherService.find_forecast(facade.lat_and_long, 'imperial')
+      attributes = MapService.lat_and_long('Tampa,FL')
+      lat_and_long = MapQuest.new(attributes)
+      response = WeatherService.find_forecast(lat_and_long, 'imperial')
 
       expect(response).to be_a(Hash)
       expect(response.keys).to include(:lat)
