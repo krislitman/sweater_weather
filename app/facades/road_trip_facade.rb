@@ -47,10 +47,11 @@ class RoadTripFacade
   private
 
   def current_weather
-    facade = WeatherFacade.new(@end_city)
+    forecast = WeatherService.find_forecast(@lat_and_long, 'imperial')
+    current_weather = CurrentWeather.new(forecast)
     {
-      temperature: facade.current_weather.temperature,
-      conditions: facade.current_weather.conditions
+      temperature: current_weather.temperature,
+      conditions: current_weather.conditions
     }
   end
 

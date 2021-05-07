@@ -19,11 +19,11 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Fri, 07 May 2021 17:37:44 GMT
+      - Fri, 07 May 2021 17:49:39 GMT
       Content-Type:
       - application/json;charset=UTF-8
       Content-Length:
-      - '3136'
+      - '3137'
       Connection:
       - keep-alive
       Access-Control-Allow-Methods:
@@ -37,7 +37,7 @@ http_interactions:
       Geocodetransactioncount:
       - '1'
       Last-Modified:
-      - Fri, 07 May 2021 17:37:44 GMT
+      - Fri, 07 May 2021 17:49:39 GMT
       Pragma:
       - no-cache
       Reversegeocodetransactioncount:
@@ -45,7 +45,7 @@ http_interactions:
       Server:
       - Apache-Coyote/1.1
       Set-Cookie:
-      - JSESSIONID=543EB3CEC75C6CC3D014B2B6F134A017; Path=/; HttpOnly
+      - JSESSIONID=E78CCBBFEA1A179B279C5B254684F46E; Path=/; HttpOnly
       Status:
       - success
       Transactionweight:
@@ -55,11 +55,11 @@ http_interactions:
       string: '{"info":{"statuscode":0,"copyright":{"text":"\u00A9 2021 MapQuest,
         Inc.","imageUrl":"http://api.mqcdn.com/res/mqlogo.gif","imageAltText":"\u00A9
         2021 MapQuest, Inc."},"messages":[]},"options":{"maxResults":-1,"thumbMaps":true,"ignoreLatLngInput":false},"results":[{"providedLocation":{"location":"Dallas,TX"},"locations":[{"street":"","adminArea6":"","adminArea6Type":"Neighborhood","adminArea5":"Dallas","adminArea5Type":"City","adminArea4":"Dallas
-        County","adminArea4Type":"County","adminArea3":"TX","adminArea3Type":"State","adminArea1":"US","adminArea1Type":"Country","postalCode":"","geocodeQualityCode":"A5XAX","geocodeQuality":"CITY","dragPoint":false,"sideOfStreet":"N","linkId":"0","unknownInput":"","type":"s","latLng":{"lat":32.776272,"lng":-96.796856},"displayLatLng":{"lat":32.776272,"lng":-96.796856},"mapUrl":"http://open.mapquestapi.com/staticmap/v5/map?key=DONT_LOOK&type=map&size=225,160&locations=32.7762719,-96.7968559|marker-sm-50318A-1&scalebar=true&zoom=12&rand=859014174"},{"street":"","adminArea6":"","adminArea6Type":"Neighborhood","adminArea5":"","adminArea5Type":"City","adminArea4":"Dallas
-        County","adminArea4Type":"County","adminArea3":"TX","adminArea3Type":"State","adminArea1":"US","adminArea1Type":"Country","postalCode":"","geocodeQualityCode":"A4XCX","geocodeQuality":"COUNTY","dragPoint":false,"sideOfStreet":"N","linkId":"0","unknownInput":"","type":"s","latLng":{"lat":32.76204,"lng":-96.779007},"displayLatLng":{"lat":32.76204,"lng":-96.779007},"mapUrl":"http://open.mapquestapi.com/staticmap/v5/map?key=DONT_LOOK&type=map&size=225,160&locations=32.7620405,-96.7790069|marker-sm-50318A-2&scalebar=true&zoom=9&rand=-1862904661"},{"street":"Dallas","adminArea6":"","adminArea6Type":"Neighborhood","adminArea5":"Italy","adminArea5Type":"City","adminArea4":"Ellis
-        County","adminArea4Type":"County","adminArea3":"TX","adminArea3Type":"State","adminArea1":"US","adminArea1Type":"Country","postalCode":"76651","geocodeQualityCode":"B1AXX","geocodeQuality":"STREET","dragPoint":false,"sideOfStreet":"N","linkId":"0","unknownInput":"","type":"s","latLng":{"lat":32.191289,"lng":-96.87842},"displayLatLng":{"lat":32.191289,"lng":-96.87842},"mapUrl":"http://open.mapquestapi.com/staticmap/v5/map?key=DONT_LOOK&type=map&size=225,160&locations=32.1912891,-96.8784197|marker-sm-50318A-3&scalebar=true&zoom=15&rand=242321566"},{"street":"Dallas","adminArea6":"","adminArea6Type":"Neighborhood","adminArea5":"Teague","adminArea5Type":"City","adminArea4":"Freestone
-        County","adminArea4Type":"County","adminArea3":"TX","adminArea3Type":"State","adminArea1":"US","adminArea1Type":"Country","postalCode":"75860","geocodeQualityCode":"B1AXX","geocodeQuality":"STREET","dragPoint":false,"sideOfStreet":"N","linkId":"0","unknownInput":"","type":"s","latLng":{"lat":31.63518,"lng":-96.294187},"displayLatLng":{"lat":31.63518,"lng":-96.294187},"mapUrl":"http://open.mapquestapi.com/staticmap/v5/map?key=DONT_LOOK&type=map&size=225,160&locations=31.6351803,-96.2941871|marker-sm-50318A-4&scalebar=true&zoom=15&rand=-377388010"}]}]}'
-  recorded_at: Fri, 07 May 2021 17:37:44 GMT
+        County","adminArea4Type":"County","adminArea3":"TX","adminArea3Type":"State","adminArea1":"US","adminArea1Type":"Country","postalCode":"","geocodeQualityCode":"A5XAX","geocodeQuality":"CITY","dragPoint":false,"sideOfStreet":"N","linkId":"0","unknownInput":"","type":"s","latLng":{"lat":32.776272,"lng":-96.796856},"displayLatLng":{"lat":32.776272,"lng":-96.796856},"mapUrl":"http://open.mapquestapi.com/staticmap/v5/map?key=DONT_LOOK&type=map&size=225,160&locations=32.7762719,-96.7968559|marker-sm-50318A-1&scalebar=true&zoom=12&rand=183492365"},{"street":"","adminArea6":"","adminArea6Type":"Neighborhood","adminArea5":"","adminArea5Type":"City","adminArea4":"Dallas
+        County","adminArea4Type":"County","adminArea3":"TX","adminArea3Type":"State","adminArea1":"US","adminArea1Type":"Country","postalCode":"","geocodeQualityCode":"A4XCX","geocodeQuality":"COUNTY","dragPoint":false,"sideOfStreet":"N","linkId":"0","unknownInput":"","type":"s","latLng":{"lat":32.76204,"lng":-96.779007},"displayLatLng":{"lat":32.76204,"lng":-96.779007},"mapUrl":"http://open.mapquestapi.com/staticmap/v5/map?key=DONT_LOOK&type=map&size=225,160&locations=32.7620405,-96.7790069|marker-sm-50318A-2&scalebar=true&zoom=9&rand=-184311923"},{"street":"Dallas","adminArea6":"","adminArea6Type":"Neighborhood","adminArea5":"Italy","adminArea5Type":"City","adminArea4":"Ellis
+        County","adminArea4Type":"County","adminArea3":"TX","adminArea3Type":"State","adminArea1":"US","adminArea1Type":"Country","postalCode":"76651","geocodeQualityCode":"B1AXX","geocodeQuality":"STREET","dragPoint":false,"sideOfStreet":"N","linkId":"0","unknownInput":"","type":"s","latLng":{"lat":32.191289,"lng":-96.87842},"displayLatLng":{"lat":32.191289,"lng":-96.87842},"mapUrl":"http://open.mapquestapi.com/staticmap/v5/map?key=DONT_LOOK&type=map&size=225,160&locations=32.1912891,-96.8784197|marker-sm-50318A-3&scalebar=true&zoom=15&rand=1651647561"},{"street":"Dallas","adminArea6":"","adminArea6Type":"Neighborhood","adminArea5":"Teague","adminArea5Type":"City","adminArea4":"Freestone
+        County","adminArea4Type":"County","adminArea3":"TX","adminArea3Type":"State","adminArea1":"US","adminArea1Type":"Country","postalCode":"75860","geocodeQualityCode":"B1AXX","geocodeQuality":"STREET","dragPoint":false,"sideOfStreet":"N","linkId":"0","unknownInput":"","type":"s","latLng":{"lat":31.63518,"lng":-96.294187},"displayLatLng":{"lat":31.63518,"lng":-96.294187},"mapUrl":"http://open.mapquestapi.com/staticmap/v5/map?key=DONT_LOOK&type=map&size=225,160&locations=31.6351803,-96.2941871|marker-sm-50318A-4&scalebar=true&zoom=15&rand=-2045204146"}]}]}'
+  recorded_at: Fri, 07 May 2021 17:49:39 GMT
 - request:
     method: get
     uri: https://api.openweathermap.org/data/2.5/onecall?appid=DONT_LOOK_AGAIN&exclude=alerts,minutely&lat=32.776272&lon=-96.796856&units=imperial
@@ -81,7 +81,7 @@ http_interactions:
       Server:
       - openresty
       Date:
-      - Fri, 07 May 2021 17:37:44 GMT
+      - Fri, 07 May 2021 17:49:40 GMT
       Content-Type:
       - application/json; charset=utf-8
       Content-Length:
@@ -98,7 +98,7 @@ http_interactions:
       - GET, POST
     body:
       encoding: UTF-8
-      string: '{"lat":32.7763,"lon":-96.7969,"timezone":"America/Chicago","timezone_offset":-18000,"current":{"dt":1620409064,"sunrise":1620387254,"sunset":1620436391,"temp":78.96,"feels_like":78.96,"pressure":1022,"humidity":44,"dew_point":55.22,"uvi":9.5,"clouds":20,"visibility":10000,"wind_speed":10.36,"wind_deg":160,"weather":[{"id":801,"main":"Clouds","description":"few
+      string: '{"lat":32.7763,"lon":-96.7969,"timezone":"America/Chicago","timezone_offset":-18000,"current":{"dt":1620409780,"sunrise":1620387254,"sunset":1620436391,"temp":78.96,"feels_like":78.96,"pressure":1022,"humidity":44,"dew_point":55.22,"uvi":9.5,"clouds":20,"visibility":10000,"wind_speed":10.36,"wind_deg":160,"weather":[{"id":801,"main":"Clouds","description":"few
         clouds","icon":"02d"}]},"hourly":[{"dt":1620406800,"temp":78.33,"feels_like":78.03,"pressure":1022,"humidity":46,"dew_point":55.87,"uvi":8.24,"clouds":18,"visibility":10000,"wind_speed":10.25,"wind_deg":156,"wind_gust":12.97,"weather":[{"id":801,"main":"Clouds","description":"few
         clouds","icon":"02d"}],"pop":0},{"dt":1620410400,"temp":78.96,"feels_like":78.96,"pressure":1022,"humidity":44,"dew_point":55.22,"uvi":9.5,"clouds":20,"visibility":10000,"wind_speed":10.76,"wind_deg":166,"wind_gust":13.27,"weather":[{"id":801,"main":"Clouds","description":"few
         clouds","icon":"02d"}],"pop":0},{"dt":1620414000,"temp":79.18,"feels_like":79.18,"pressure":1022,"humidity":43,"dew_point":54.77,"uvi":9.46,"clouds":17,"visibility":10000,"wind_speed":11.18,"wind_deg":171,"wind_gust":13.96,"weather":[{"id":801,"main":"Clouds","description":"few
@@ -156,5 +156,5 @@ http_interactions:
         rain","icon":"10d"}],"clouds":100,"pop":1,"rain":8.28,"uvi":4},{"dt":1620928800,"sunrise":1620905373,"sunset":1620955058,"moonrise":1620909720,"moonset":1620962100,"moon_phase":0.06,"temp":{"day":74.48,"min":58.51,"max":78.03,"night":67.69,"eve":74.64,"morn":58.51},"feels_like":{"day":74.12,"night":58.59,"eve":74.3,"morn":58.59},"pressure":1023,"humidity":53,"dew_point":56.21,"wind_speed":8.3,"wind_deg":64,"wind_gust":15.97,"weather":[{"id":500,"main":"Rain","description":"light
         rain","icon":"10d"}],"clouds":21,"pop":0.96,"rain":0.29,"uvi":4},{"dt":1621015200,"sunrise":1620991731,"sunset":1621041502,"moonrise":1620998580,"moonset":1621051860,"moon_phase":0.09,"temp":{"day":78.8,"min":61.18,"max":78.8,"night":71.85,"eve":76.32,"morn":61.18},"feels_like":{"day":78.8,"night":61.18,"eve":76.98,"morn":61.18},"pressure":1021,"humidity":61,"dew_point":64.33,"wind_speed":10.45,"wind_deg":166,"wind_gust":22.55,"weather":[{"id":800,"main":"Clear","description":"clear
         sky","icon":"01d"}],"clouds":7,"pop":0,"uvi":4}]}'
-  recorded_at: Fri, 07 May 2021 17:37:44 GMT
+  recorded_at: Fri, 07 May 2021 17:49:40 GMT
 recorded_with: VCR 6.0.0
