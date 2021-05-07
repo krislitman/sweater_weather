@@ -12,14 +12,20 @@ class BackgroundsFacade
   end
 
   def find_time
-    facade = WeatherFacade.new(@location)
-    @time = facade.current_weather.datetime.strftime('%I %M %p')
+    attributes = MapService.lat_and_long(@location)
+    lat_and_long = MapQuest.new(attributes)
+    forecast = WeatherService.find_forecast(lat_and_long, @units)
+    current_weather = CurrentWeather.new(forecast)
+    @time = current_weather.datetime.strftime('%I %M %p')
   end
 
   def find_conditions
     return nil if @location.to_s == @location.to_i.to_s || @location.blank?
-    facade = WeatherFacade.new(@location)
-    @conditions = facade.current_weather.conditions
+    attributes = MapService.lat_and_long(@location)
+    lat_and_long = MapQuest.new(attributes)
+    forecast = WeatherService.find_forecast(lat_and_long, @units)
+    current_weather = CurrentWeather.new(forecast)
+    @conditions = current_weather.conditions
   end
 
   def background_image

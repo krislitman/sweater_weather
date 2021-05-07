@@ -10,10 +10,13 @@ class SalariesFacade
   end
 
   def find_forecast
-    complete_forecast = WeatherFacade.new(@destination)
+    attributes = MapService.lat_and_long(@destination)
+    lat_and_long = MapQuest.new(attributes)
+    forecast = WeatherService.find_forecast(lat_and_long, @units)
+    complete_forecast = CurrentWeather.new(forecast)
     {
-      summary: complete_forecast.current_weather.conditions.titleize,
-      temperature: complete_forecast.current_weather.temperature
+      summary: complete_forecast.conditions.titleize,
+      temperature: complete_forecast.temperature
     }
   end
 end

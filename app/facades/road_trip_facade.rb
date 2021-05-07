@@ -14,10 +14,8 @@ class RoadTripFacade
 
   def destination_coordinates
     return nil if @end_city.blank?
-    # facade = WeatherFacade.new(@end_city)
     coordinates = MapService.lat_and_long(@end_city)
     MapQuest.new(coordinates)
-    # facade.lat_and_long
   end
 
   def find_weather

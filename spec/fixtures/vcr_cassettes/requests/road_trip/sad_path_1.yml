@@ -19,11 +19,11 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Fri, 07 May 2021 01:08:43 GMT
+      - Fri, 07 May 2021 01:18:45 GMT
       Content-Type:
       - application/json;charset=UTF-8
       Content-Length:
-      - '3171'
+      - '3172'
       Connection:
       - keep-alive
       Access-Control-Allow-Methods:
@@ -37,7 +37,7 @@ http_interactions:
       Geocodetransactioncount:
       - '1'
       Last-Modified:
-      - Fri, 07 May 2021 01:08:43 GMT
+      - Fri, 07 May 2021 01:18:45 GMT
       Pragma:
       - no-cache
       Reversegeocodetransactioncount:
@@ -45,7 +45,7 @@ http_interactions:
       Server:
       - Apache-Coyote/1.1
       Set-Cookie:
-      - JSESSIONID=7BC7DC47B8D5A27BDE0863E0E3634A7C; Path=/; HttpOnly
+      - JSESSIONID=B0DFF050D7C2849C8E83A2B7A721C506; Path=/; HttpOnly
       Status:
       - success
       Transactionweight:
@@ -54,12 +54,12 @@ http_interactions:
       encoding: UTF-8
       string: '{"info":{"statuscode":0,"copyright":{"text":"\u00A9 2021 MapQuest,
         Inc.","imageUrl":"http://api.mqcdn.com/res/mqlogo.gif","imageAltText":"\u00A9
-        2021 MapQuest, Inc."},"messages":[]},"options":{"maxResults":-1,"thumbMaps":true,"ignoreLatLngInput":false},"results":[{"providedLocation":{"location":"London,UK"},"locations":[{"street":"","adminArea6":"","adminArea6Type":"Neighborhood","adminArea5":"London","adminArea5Type":"City","adminArea4":"London","adminArea4Type":"County","adminArea3":"England","adminArea3Type":"State","adminArea1":"GB","adminArea1Type":"Country","postalCode":"","geocodeQualityCode":"A5XAX","geocodeQuality":"CITY","dragPoint":false,"sideOfStreet":"N","linkId":"0","unknownInput":"","type":"s","latLng":{"lat":51.507322,"lng":-0.127647},"displayLatLng":{"lat":51.507322,"lng":-0.127647},"mapUrl":"http://open.mapquestapi.com/staticmap/v5/map?key=DONT_LOOK&type=map&size=225,160&locations=51.5073219,-0.1276474|marker-sm-50318A-1&scalebar=true&zoom=12&rand=-290496010"},{"street":"","adminArea6":"","adminArea6Type":"Neighborhood","adminArea5":"City
-        of London","adminArea5Type":"City","adminArea4":"City of London","adminArea4Type":"County","adminArea3":"England","adminArea3Type":"State","adminArea1":"GB","adminArea1Type":"Country","postalCode":"","geocodeQualityCode":"A5XXX","geocodeQuality":"CITY","dragPoint":false,"sideOfStreet":"N","linkId":"0","unknownInput":"","type":"s","latLng":{"lat":51.515618,"lng":-0.091998},"displayLatLng":{"lat":51.515618,"lng":-0.091998},"mapUrl":"http://open.mapquestapi.com/staticmap/v5/map?key=DONT_LOOK&type=map&size=225,160&locations=51.5156177,-0.0919983|marker-sm-50318A-2&scalebar=true&zoom=12&rand=-542760767"},{"street":"268
+        2021 MapQuest, Inc."},"messages":[]},"options":{"maxResults":-1,"thumbMaps":true,"ignoreLatLngInput":false},"results":[{"providedLocation":{"location":"London,UK"},"locations":[{"street":"","adminArea6":"","adminArea6Type":"Neighborhood","adminArea5":"London","adminArea5Type":"City","adminArea4":"London","adminArea4Type":"County","adminArea3":"England","adminArea3Type":"State","adminArea1":"GB","adminArea1Type":"Country","postalCode":"","geocodeQualityCode":"A5XAX","geocodeQuality":"CITY","dragPoint":false,"sideOfStreet":"N","linkId":"0","unknownInput":"","type":"s","latLng":{"lat":51.507322,"lng":-0.127647},"displayLatLng":{"lat":51.507322,"lng":-0.127647},"mapUrl":"http://open.mapquestapi.com/staticmap/v5/map?key=DONT_LOOK&type=map&size=225,160&locations=51.5073219,-0.1276474|marker-sm-50318A-1&scalebar=true&zoom=12&rand=-1690601715"},{"street":"","adminArea6":"","adminArea6Type":"Neighborhood","adminArea5":"City
+        of London","adminArea5Type":"City","adminArea4":"City of London","adminArea4Type":"County","adminArea3":"England","adminArea3Type":"State","adminArea1":"GB","adminArea1Type":"Country","postalCode":"","geocodeQualityCode":"A5XXX","geocodeQuality":"CITY","dragPoint":false,"sideOfStreet":"N","linkId":"0","unknownInput":"","type":"s","latLng":{"lat":51.515618,"lng":-0.091998},"displayLatLng":{"lat":51.515618,"lng":-0.091998},"mapUrl":"http://open.mapquestapi.com/staticmap/v5/map?key=DONT_LOOK&type=map&size=225,160&locations=51.5156177,-0.0919983|marker-sm-50318A-2&scalebar=true&zoom=12&rand=-222532122"},{"street":"268
         High Road","adminArea6":"Noel Park","adminArea6Type":"Neighborhood","adminArea5":"London","adminArea5Type":"City","adminArea4":"","adminArea4Type":"County","adminArea3":"England","adminArea3Type":"State","adminArea1":"GB","adminArea1Type":"Country","postalCode":"N22
-        8JR","geocodeQualityCode":"P1XAX","geocodeQuality":"POINT","dragPoint":false,"sideOfStreet":"N","linkId":"0","unknownInput":"","type":"s","latLng":{"lat":51.601489,"lng":-0.111696},"displayLatLng":{"lat":51.601489,"lng":-0.111696},"mapUrl":"http://open.mapquestapi.com/staticmap/v5/map?key=DONT_LOOK&type=map&size=225,160&locations=51.6014893,-0.1116958|marker-sm-50318A-3&scalebar=true&zoom=15&rand=-871002997"},{"street":"83
-        Mortimer Street","adminArea6":"Fitzrovia","adminArea6Type":"Neighborhood","adminArea5":"London","adminArea5Type":"City","adminArea4":"","adminArea4Type":"County","adminArea3":"England","adminArea3Type":"State","adminArea1":"GB","adminArea1Type":"Country","postalCode":"W1","geocodeQualityCode":"P1XAX","geocodeQuality":"POINT","dragPoint":false,"sideOfStreet":"N","linkId":"0","unknownInput":"","type":"s","latLng":{"lat":51.51757,"lng":-0.14116},"displayLatLng":{"lat":51.51757,"lng":-0.14116},"mapUrl":"http://open.mapquestapi.com/staticmap/v5/map?key=DONT_LOOK&type=map&size=225,160&locations=51.51756975,-0.141160098795552|marker-sm-50318A-4&scalebar=true&zoom=15&rand=-1637346695"}]}]}'
-  recorded_at: Fri, 07 May 2021 01:08:43 GMT
+        8JR","geocodeQualityCode":"P1XAX","geocodeQuality":"POINT","dragPoint":false,"sideOfStreet":"N","linkId":"0","unknownInput":"","type":"s","latLng":{"lat":51.601489,"lng":-0.111696},"displayLatLng":{"lat":51.601489,"lng":-0.111696},"mapUrl":"http://open.mapquestapi.com/staticmap/v5/map?key=DONT_LOOK&type=map&size=225,160&locations=51.6014893,-0.1116958|marker-sm-50318A-3&scalebar=true&zoom=15&rand=-409598150"},{"street":"83
+        Mortimer Street","adminArea6":"Fitzrovia","adminArea6Type":"Neighborhood","adminArea5":"London","adminArea5Type":"City","adminArea4":"","adminArea4Type":"County","adminArea3":"England","adminArea3Type":"State","adminArea1":"GB","adminArea1Type":"Country","postalCode":"W1","geocodeQualityCode":"P1XAX","geocodeQuality":"POINT","dragPoint":false,"sideOfStreet":"N","linkId":"0","unknownInput":"","type":"s","latLng":{"lat":51.51757,"lng":-0.14116},"displayLatLng":{"lat":51.51757,"lng":-0.14116},"mapUrl":"http://open.mapquestapi.com/staticmap/v5/map?key=DONT_LOOK&type=map&size=225,160&locations=51.51756975,-0.141160098795552|marker-sm-50318A-4&scalebar=true&zoom=15&rand=-1772137910"}]}]}'
+  recorded_at: Fri, 07 May 2021 01:18:45 GMT
 - request:
     method: get
     uri: http://open.mapquestapi.com/directions/v2/route?from=New%20York,NY&key=DONT_LOOK&to=London,UK
@@ -79,7 +79,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Fri, 07 May 2021 01:08:43 GMT
+      - Fri, 07 May 2021 01:18:45 GMT
       Content-Type:
       - application/json;charset=UTF-8
       Content-Length:
@@ -89,11 +89,11 @@ http_interactions:
       Server:
       - Apache-Coyote/1.1
       Set-Cookie:
-      - JSESSIONID=FAD025BD07830585FF4AA915EF763DBF; Path=/directions; HttpOnly
+      - JSESSIONID=6E46FD0C6629C1078F2974ED535375EC; Path=/directions; HttpOnly
       Expires:
       - Mon, 20 Dec 1998 01:00:00 GMT
       Last-Modified:
-      - Fri, 07 May 2021 01:08:43 GMT
+      - Fri, 07 May 2021 01:18:45 GMT
       Cache-Control:
       - no-cache, must-revalidate
       Pragma:
@@ -110,7 +110,7 @@ http_interactions:
       encoding: ASCII-8BIT
       string: !binary |-
         eyJyb3V0ZSI6eyJyb3V0ZUVycm9yIjp7ImVycm9yQ29kZSI6MiwibWVzc2FnZSI6IiJ9fSwiaW5mbyI6eyJzdGF0dXNjb2RlIjo0MDIsImNvcHlyaWdodCI6eyJpbWFnZUFsdFRleHQiOiLCqSAyMDIxIE1hcFF1ZXN0LCBJbmMuIiwiaW1hZ2VVcmwiOiJodHRwOi8vYXBpLm1xY2RuLmNvbS9yZXMvbXFsb2dvLmdpZiIsInRleHQiOiLCqSAyMDIxIE1hcFF1ZXN0LCBJbmMuIn0sIm1lc3NhZ2VzIjpbIldlIGFyZSB1bmFibGUgdG8gcm91dGUgd2l0aCB0aGUgZ2l2ZW4gbG9jYXRpb25zLiJdfX0=
-  recorded_at: Fri, 07 May 2021 01:08:43 GMT
+  recorded_at: Fri, 07 May 2021 01:18:45 GMT
 - request:
     method: get
     uri: https://api.openweathermap.org/data/2.5/onecall?appid=DONT_LOOK_AGAIN&exclude=alerts,minutely&lat=51.507322&lon=-0.127647&units=imperial
@@ -132,7 +132,7 @@ http_interactions:
       Server:
       - openresty
       Date:
-      - Fri, 07 May 2021 01:08:44 GMT
+      - Fri, 07 May 2021 01:18:45 GMT
       Content-Type:
       - application/json; charset=utf-8
       Content-Length:
@@ -149,7 +149,7 @@ http_interactions:
       - GET, POST
     body:
       encoding: UTF-8
-      string: '{"lat":51.5073,"lon":-0.1276,"timezone":"Europe/London","timezone_offset":3600,"current":{"dt":1620349724,"sunrise":1620361278,"sunset":1620415967,"temp":43.57,"feels_like":36.77,"pressure":1011,"humidity":70,"dew_point":34.45,"uvi":0,"clouds":16,"visibility":10000,"wind_speed":13.8,"wind_deg":290,"weather":[{"id":801,"main":"Clouds","description":"few
+      string: '{"lat":51.5073,"lon":-0.1276,"timezone":"Europe/London","timezone_offset":3600,"current":{"dt":1620350325,"sunrise":1620361278,"sunset":1620415967,"temp":43.57,"feels_like":36.77,"pressure":1011,"humidity":70,"dew_point":34.45,"uvi":0,"clouds":16,"visibility":10000,"wind_speed":13.8,"wind_deg":290,"weather":[{"id":801,"main":"Clouds","description":"few
         clouds","icon":"02n"}]},"hourly":[{"dt":1620349200,"temp":43.57,"feels_like":38.08,"pressure":1011,"humidity":70,"dew_point":34.45,"uvi":0,"clouds":16,"visibility":10000,"wind_speed":9.98,"wind_deg":300,"wind_gust":25.23,"weather":[{"id":801,"main":"Clouds","description":"few
         clouds","icon":"02n"}],"pop":0},{"dt":1620352800,"temp":42.84,"feels_like":37.58,"pressure":1011,"humidity":72,"dew_point":34.45,"uvi":0,"clouds":18,"visibility":10000,"wind_speed":9.01,"wind_deg":299,"wind_gust":24.02,"weather":[{"id":801,"main":"Clouds","description":"few
         clouds","icon":"02n"}],"pop":0},{"dt":1620356400,"temp":41.77,"feels_like":36.57,"pressure":1012,"humidity":73,"dew_point":33.76,"uvi":0,"clouds":19,"visibility":10000,"wind_speed":8.37,"wind_deg":288,"wind_gust":23.78,"weather":[{"id":801,"main":"Clouds","description":"few
@@ -207,5 +207,5 @@ http_interactions:
         rain","icon":"10d"}],"clouds":97,"pop":0.66,"rain":2.95,"uvi":5},{"dt":1620903600,"sunrise":1620879093,"sunset":1620934937,"moonrise":1620882240,"moonset":1620942120,"moon_phase":0.05,"temp":{"day":62.69,"min":44.62,"max":62.69,"night":51.08,"eve":58.26,"morn":46.45},"feels_like":{"day":60.78,"night":44.44,"eve":57.07,"morn":44.44},"pressure":1010,"humidity":45,"dew_point":41.22,"wind_speed":4.81,"wind_deg":236,"wind_gust":10.96,"weather":[{"id":500,"main":"Rain","description":"light
         rain","icon":"10d"}],"clouds":58,"pop":0.81,"rain":2.06,"uvi":5},{"dt":1620990000,"sunrise":1620965402,"sunset":1621021429,"moonrise":1620970440,"moonset":1621032360,"moon_phase":0.08,"temp":{"day":60.31,"min":44.4,"max":62.38,"night":49.89,"eve":56.34,"morn":45.1},"feels_like":{"day":58.5,"night":40.8,"eve":54.68,"morn":40.8},"pressure":1017,"humidity":52,"dew_point":42.87,"wind_speed":11.21,"wind_deg":73,"wind_gust":23.94,"weather":[{"id":803,"main":"Clouds","description":"broken
         clouds","icon":"04d"}],"clouds":84,"pop":0.14,"uvi":5}]}'
-  recorded_at: Fri, 07 May 2021 01:08:44 GMT
+  recorded_at: Fri, 07 May 2021 01:18:46 GMT
 recorded_with: VCR 6.0.0
