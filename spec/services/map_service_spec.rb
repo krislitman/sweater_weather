@@ -8,8 +8,8 @@ RSpec.describe MapService do
 
       expect(response).to be_a(Hash)
       expect(response[:results][0][:providedLocation][:location]).to eq('Denver,CO')
-      expect(response[:results][0][:locations][0][:latLng][:lat]).to eq(39.738453)
-      expect(response[:results][0][:locations][0][:latLng][:lng]).to eq(-104.984853)
+      expect(response[:results][0][:locations][0][:latLng][:lat]).to eq(39.739154)
+      expect(response[:results][0][:locations][0][:latLng][:lng]).to eq(-104.984703)
     end
   end
   it 'Sad Path ~ Returns nil if no response' do
