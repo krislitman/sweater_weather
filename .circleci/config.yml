@@ -38,4 +38,4 @@ jobs:
           name: Wait for Redis
           command: dockerize -wait tcp://localhost:6379 -timeout 1m
       # Run the test suite
-      - run: bundle exec rake
+      - run: bundle exec rspec
